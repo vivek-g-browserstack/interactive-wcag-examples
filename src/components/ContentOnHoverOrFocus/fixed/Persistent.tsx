@@ -5,22 +5,11 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { useState } from "react"
 
-export function PersistentBroken() {
-    const [isOpen, setIsOpen] = useState(false)
-
+export function PersistentFixed() {
     return (
         <TooltipProvider>
-            <Tooltip
-                open={isOpen}
-                onOpenChange={(open) => {
-                    setIsOpen(open)
-                    if (open) {
-                        setTimeout(() => setIsOpen(false), 2000)
-                    }
-                }}
-            >
+            <Tooltip>
                 <TooltipTrigger asChild>
                     <Button variant="outline" className="w-fit mx-auto">Hover</Button>
                 </TooltipTrigger>

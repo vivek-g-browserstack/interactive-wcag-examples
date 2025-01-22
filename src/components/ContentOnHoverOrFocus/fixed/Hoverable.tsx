@@ -6,9 +6,9 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-export function HoverableBroken() {
+export function HoverableFixed() {
     return (
-        <TooltipProvider disableHoverableContent>
+        <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
                     <Button variant="outline" className="w-fit mx-auto">Hover</Button>

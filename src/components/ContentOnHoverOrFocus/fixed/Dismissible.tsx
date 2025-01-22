@@ -6,22 +6,11 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-export function DismissibleBroken() {
+export function DismissibleFixed() {
     return (
         <TooltipProvider>
             <Tooltip>
-                <TooltipTrigger
-                    asChild
-                    onKeyDown={(e) => {
-                        alert("Escape pressed")
-                        e.preventDefault()
-                        if (e.key === "Escape") {
-                            alert("Escape pressed")
-                            e.preventDefault()
-                            e.stopPropagation()
-                        }
-                    }}
-                >
+                <TooltipTrigger asChild>
                     <Button variant="outline" className="w-fit mx-auto">Hover</Button>
                 </TooltipTrigger>
                 <TooltipContent>
