@@ -55,7 +55,7 @@ const invoices = [
 
 export function TableFixed() {
     return (
-        <Table>
+        <Table className="max-w-[360px] mx-auto">
             <TableHeader>
                 <TableRow>
                     <TableHead>Invoice</TableHead>

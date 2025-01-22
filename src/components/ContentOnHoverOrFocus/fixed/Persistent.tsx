@@ -11,7 +11,7 @@ export function PersistentFixed() {
         <TooltipProvider>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button variant="outline" className="w-fit mx-auto">Hover</Button>
+                    <Button variant="outline" className="w-fit block mx-auto">Hover</Button>
                 </TooltipTrigger>
                 <TooltipContent>
                     <p className="w-48">I am the content inside the tooltip. Do I get dismissed automatically after a while or do I stay like I am your best friend?</p>

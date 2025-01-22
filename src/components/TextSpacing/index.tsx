@@ -82,15 +82,15 @@ export function TextSpacing() {
             </div>
 
             <div id="text-spacing-wcag" className="grid grid-cols-3 gap-8">
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col">
+                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
                     <h3 className="font-bold mb-4 text-orange-600">Buttons with fixed widths</h3>
                     {isFixed ? <ButtonFixed /> : <ButtonBroken />}
                 </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col">
+                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
                     <h3 className="font-bold mb-4 text-orange-600">Table rows with fixed heights</h3>
                     {isFixed ? <TableFixed /> : <TableBroken />}
                 </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col">
+                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
                     <h3 className="font-bold mb-4 text-orange-600">Cards with fixed heights</h3>
                     {isFixed ? <CardFixed /> : <CardBroken />}
                 </div>

@@ -11,7 +11,7 @@ export function HoverableBroken() {
         <TooltipProvider disableHoverableContent>
             <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button variant="outline" className="w-fit mx-auto">Hover</Button>
+                    <Button variant="outline" className="w-fit block mx-auto">Hover</Button>
                 </TooltipTrigger>
                 <TooltipContent>
                     <p className="w-48">I am the content inside the tooltip. Try hovering on me and see if I feel shy and disappear.</p>

@@ -55,7 +55,7 @@ const invoices = [
 
 export function TableBroken() {
     return (
-        <Table className="max-w-[440px]">
+        <Table className="max-w-[360px] mx-auto">
             <TableHeader>
                 <TableRow>
                     <TableHead>
