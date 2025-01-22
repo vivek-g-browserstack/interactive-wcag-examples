@@ -7,24 +7,14 @@ import {
 } from "@/components/ui/tooltip"
 
 export function DismissibleBroken() {
+
     return (
         <TooltipProvider>
             <Tooltip>
-                <TooltipTrigger
-                    asChild
-                    onKeyDown={(e) => {
-                        alert("Escape pressed")
-                        e.preventDefault()
-                        if (e.key === "Escape") {
-                            alert("Escape pressed")
-                            e.preventDefault()
-                            e.stopPropagation()
-                        }
-                    }}
-                >
+                <TooltipTrigger asChild >
                     <Button variant="outline" className="w-fit mx-auto">Hover</Button>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent onEscapeKeyDown={(e) => e.preventDefault()}>
                     <p className="w-48">I am the content inside the tooltip. Do you know the cheat code to send me away?</p>
                 </TooltipContent>
             </Tooltip>

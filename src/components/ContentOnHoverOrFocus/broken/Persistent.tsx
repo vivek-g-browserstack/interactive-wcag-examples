@@ -17,7 +17,7 @@ export function PersistentBroken() {
                 onOpenChange={(open) => {
                     setIsOpen(open)
                     if (open) {
-                        setTimeout(() => setIsOpen(false), 2000)
+                        setTimeout(() => setIsOpen(false), 1000)
                     }
                 }}
             >
