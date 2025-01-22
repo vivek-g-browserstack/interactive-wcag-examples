@@ -34,7 +34,7 @@ export function ContentOnFocusOrHover() {
                 </div>
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col">
                     <h3 className="font-bold mb-2 text-blue-600">Dismissible tooltips</h3>
-                    <p className="text-blue-600 mb-8">Once the tooltip appears, press "Esc" and check if it can be dismissed</p>
+                    <p className="text-blue-600 mb-8">Once the tooltip appears, press Esc and check if it can be dismissed</p>
                     {isFixed ? <DismissibleBroken /> : <DismissibleBroken />}
                 </div>
 
