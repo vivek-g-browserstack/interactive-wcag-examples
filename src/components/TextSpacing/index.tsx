@@ -16,11 +16,11 @@ import {
 
 export function TextSpacing() {
     const [isFixed, setIsFixed] = useState(false)
-    const [applyWCAGValues, setApplyWCAGValues] = useState(true)
+    // const [applyWCAGValues, setApplyWCAGValues] = useState(true)
 
     return (
         <div className="px-4">
-            {applyWCAGValues &&
+            {true &&
                 <style>
                     {`
                         #text-spacing-wcag > * {
