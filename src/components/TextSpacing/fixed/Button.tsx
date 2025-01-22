@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export function ButtonFixed() {
     return (
-        <nav className="w-[272px] border border-slate-300 p-4 rounded">
+        <nav className="w-[278px] border border-slate-300 p-4 rounded">
             <ul className="flex flex-col gap-4">
                 <li className="border-b border-slate-300">Home</li>
                 <li className="border-b border-slate-300">Reports</li>
