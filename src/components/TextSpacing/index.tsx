@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { ButtonBroken } from "./broken/Button"
 import { Switch } from "../ui/switch"
-import { ButtonFixed } from "./fixed/Button"
-import { TableBroken } from "./broken/Table"
-import { TableFixed } from "./fixed/Table"
+import { ButtonBroken } from "./broken/Button"
 import { CardBroken } from "./broken/Card"
+import { TableBroken } from "./broken/Table"
+import { ButtonFixed } from "./fixed/Button"
 import { CardFixed } from "./fixed/Card"
+import { TableFixed } from "./fixed/Table"
 
 export function TextSpacing() {
     const [isFixed, setIsFixed] = useState(false)
@@ -16,13 +16,13 @@ export function TextSpacing() {
             {applyWCAGValues &&
                 <style>
                     {`
-                        * {
+                        #text-spacing-wcag > * {
                             line-height: 1.5 !important;
                             letter-spacing: 0.12em !important;
                             word-spacing: 0.16em !important;
                         }
 
-                        p {
+                        #text-spacing-wcag > p {
                             margin-bottom:2em !important;
                         }
                 `}
@@ -51,17 +51,17 @@ export function TextSpacing() {
                 />
             </div>
 
-            <div className="grid grid-cols-3 gap-8">
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col items-center">
-                    <h3 className="font-bold mb-4">Buttons with fixed widths</h3>
+            <div id="text-spacing-wcag" className="grid grid-cols-3 gap-8">
+                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col">
+                    <h3 className="font-bold mb-4 text-blue-600">Buttons with fixed widths</h3>
                     {isFixed ? <ButtonFixed /> : <ButtonBroken />}
                 </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col items-center">
-                    <h3 className="font-bold mb-4">Table rows with fixed heights</h3>
+                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col">
+                    <h3 className="font-bold mb-4 text-blue-600">Table rows with fixed heights</h3>
                     {isFixed ? <TableFixed /> : <TableBroken />}
                 </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col items-center">
-                    <h3 className="font-bold mb-4">Cards with fixed heights</h3>
+                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200 flex flex-col">
+                    <h3 className="font-bold mb-4 text-blue-600">Cards with fixed heights</h3>
                     {isFixed ? <CardFixed /> : <CardBroken />}
                 </div>
 
