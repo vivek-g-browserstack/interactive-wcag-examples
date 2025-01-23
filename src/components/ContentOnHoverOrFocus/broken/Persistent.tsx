@@ -12,7 +12,8 @@ export function PersistentBroken() {
 
     return (
         <TooltipProvider>
-            <Tooltip delayDuration={200}
+            <Tooltip
+                delayDuration={200}
                 open={isOpen}
                 onOpenChange={(open) => {
                     setIsOpen(open)
@@ -22,7 +23,9 @@ export function PersistentBroken() {
                 }}
             >
                 <TooltipTrigger asChild>
-                    <Button variant="outline" className="w-fit block mx-auto">Hover</Button>
+                    <Button variant="outline" className="w-fit block mx-auto">
+                        {isOpen ? `You hovered me, okay bye` : `Hover`}
+                    </Button>
                 </TooltipTrigger>
                 <TooltipContent>
                     <p className="w-48">I am the content inside the tooltip. Do I get dismissed automatically after a while or do I stay like I am your best friend?</p>

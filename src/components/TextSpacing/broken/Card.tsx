@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export function CardBroken() {
     return (
-        <div className="bg-slate-100 p-8 rounded overflow-hidden max-w-[360px] mx-auto h-[480px]">
+        <div className="bg-slate-100 p-8 rounded overflow-visible max-w-[360px] mx-auto h-[360px]">
             <h4 className="text-2xl">Card title</h4>
             <hr className="border border-slate-300 my-2" />
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
