@@ -10,7 +10,7 @@ export function DismissibleBroken() {
 
     return (
         <TooltipProvider>
-            <Tooltip>
+            <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild >
                     <Button variant="outline" className="w-fit block mx-auto">Hover</Button>
                 </TooltipTrigger>

@@ -12,7 +12,7 @@ export function PersistentBroken() {
 
     return (
         <TooltipProvider>
-            <Tooltip
+            <Tooltip delayDuration={200}
                 open={isOpen}
                 onOpenChange={(open) => {
                     setIsOpen(open)

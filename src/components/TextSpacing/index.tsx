@@ -62,9 +62,9 @@ export function TextSpacing() {
                 <span className="flex items-center">
                     WCAG recommended text spacing values are applied to examples
                     <TooltipProvider>
-                        <Tooltip>
+                        <Tooltip delayDuration={200}>
                             <TooltipTrigger asChild>
-                                <Button variant="ghost" className="w-fit mx-auto">ⓘ</Button>
+                                <Button variant="ghost" className="w-fit mx-auto px-2 py-0">ⓘ</Button>
                             </TooltipTrigger>
                             <TooltipContent>
                                 <p className="w-84">
@@ -72,7 +72,7 @@ export function TextSpacing() {
                                         line-height: 1.5; <br />
                                         letter-spacing: 0.12em;  <br />
                                         word-spacing: 0.16em;  <br />
-                                        margin-bottom: 2em; /* only for p tags */
+                                        margin-bottom: 2em;
                                     </code>
                                 </p>
                             </TooltipContent>

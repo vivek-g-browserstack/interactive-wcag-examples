@@ -9,7 +9,7 @@ import {
 export function HoverableBroken() {
     return (
         <TooltipProvider disableHoverableContent>
-            <Tooltip>
+            <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>
                     <Button variant="outline" className="w-fit block mx-auto">Hover</Button>
                 </TooltipTrigger>
