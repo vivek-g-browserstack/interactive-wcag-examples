@@ -25,7 +25,7 @@ export function PersistentFixed() {
                     </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                    <p className="w-48">I am the content inside the tooltip. Do I get dismissed automatically after a while or do I stay like I am your best friend?</p>
+                    <p className="w-48">Do I run away automatically after a while or do I stay like I am your best friend?</p>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>

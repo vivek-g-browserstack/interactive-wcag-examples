@@ -14,7 +14,7 @@ export function HoverableFixed() {
                     <Button variant="outline" className="w-fit block mx-auto">Hover</Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                    <p className="w-48">I am the content inside the tooltip. Try hovering on me and see if I feel shy and disappear.</p>
+                    <p className="w-48">Try hovering on me and see if I feel shy and disappear.</p>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>

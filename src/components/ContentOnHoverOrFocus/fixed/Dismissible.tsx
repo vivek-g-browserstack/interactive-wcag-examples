@@ -14,7 +14,7 @@ export function DismissibleFixed() {
                     <Button variant="outline" className="w-fit block mx-auto">Hover</Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                    <p className="w-48">I am the content inside the tooltip. Do you know the cheat code to send me away?</p>
+                    <p className="w-48">Do you know the cheat code to send me away?</p>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
