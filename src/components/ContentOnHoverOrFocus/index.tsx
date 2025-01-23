@@ -12,10 +12,11 @@ export function ContentOnFocusOrHover() {
 
     return (
         <div className="px-4">
-            <div className="flex gap-8 justify-between items-end mb-4">
+            <div className="flex gap-8 justify-between items-center bg-slate-100 rounded-lg px-2 py-4 mb-4">
                 <h2 className="text-2xl">
-                    <a href="https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html" target="_blank">1.4.13 Content on hover or focus</a>
+                    1.4.13 Content on hover or focus
                 </h2>
+                <a href="https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html" target="_blank">Detailed explanation</a>
                 <div className="flex gap-2 items-center">
                     <label htmlFor="content-on-hover-or-focus-compliance">Make examples compliant</label>
                     <Switch
@@ -44,6 +45,6 @@ export function ContentOnFocusOrHover() {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
