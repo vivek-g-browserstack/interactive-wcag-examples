@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Switch } from "../ui/switch"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
@@ -7,6 +7,7 @@ import { Input } from "../ui/input"
 export function FocusVisible() {
     const [isFixed, setIsFixed] = useState(false)
     const [isGameInProgress, setIsGameInProgress] = useState(false)
+    const gameRef = useRef<HTMLParagraphElement>(null)
 
     return (
         <div className="px-4">
@@ -49,10 +50,13 @@ export function FocusVisible() {
                             }
                 `}</style>
                 <div className="col-span-2">
-                    <p className="mb-2">Let's play a game called <br /> <b>Hocus Pocus, where's the focus?</b></p>
+                    <p className="mb-2">Let&apos;s play a game called <br /> <b>Hocus Pocus, where&apos;s the focus?</b></p>
                     <Button
                         onClick={() => {
                             setIsGameInProgress((isGameInProgress) => !isGameInProgress)
+                            setTimeout(() => {
+                                gameRef.current?.scrollIntoView()
+                            }, 100)
                         }}
                     >
                         {isGameInProgress ? `End game` : `Start game`}
@@ -60,6 +64,7 @@ export function FocusVisible() {
                 </div>
                 {isGameInProgress &&
                     <div
+                        ref={gameRef}
                         className="relative col-span-4 p-4 rounded-lg border-4 border-dashed border-slate-200"
                         onKeyDown={(e) => {
                             if (e.key.toLowerCase() === "d") {
