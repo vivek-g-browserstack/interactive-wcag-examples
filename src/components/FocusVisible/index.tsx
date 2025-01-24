@@ -32,7 +32,7 @@ export function FocusVisible() {
                     />
                 </div>
             </div>
-            <div className="grid grid-cols-6 gap-8">
+            <div className="grid grid-cols-3 gap-8">
                 <style>{`
                             .remove-focus:focus {
                                 outline: none !important;
@@ -49,7 +49,7 @@ export function FocusVisible() {
                                 box-shadow: none !important;
                             }
                 `}</style>
-                <div className="col-span-2">
+                <div className="col-span-1">
                     <p className="mb-2">Let&apos;s play a game called <br /> <b>Hocus Pocus, where&apos;s the focus?</b></p>
                     <Button
                         onClick={() => {
@@ -65,7 +65,7 @@ export function FocusVisible() {
                 {isGameInProgress &&
                     <div
                         ref={gameRef}
-                        className="relative col-span-4 p-4 rounded-lg border-4 border-dashed border-slate-200"
+                        className="relative col-span-2 p-4 rounded-lg border-4 border-dashed border-slate-200"
                         onKeyDown={(e) => {
                             if (e.key.toLowerCase() === "d") {
                                 setIsFixed((isFixed) => !isFixed)
@@ -75,12 +75,12 @@ export function FocusVisible() {
                         <h3 className="font-bold mb-2 text-orange-600">In the group below, can you focus the switch element with your keyboard?</h3>
                         <p className="text-orange-600 mb-8">Use Tab and Shift+Tab to move focus</p>
                         <div className="relative h-44 mb-8 bg-yellow-50">
-                            <a href="#" className="absolute top-1/3 right-1/3">A hyyyper link</a>
+                            <a href="#" className="absolute top-1/3 right-[40%]">A hyyyper link</a>
                             <Button className={`absolute top-1/2 left-2/3 ${isFixed ? `` : `remove-focus`}`}>I might be focussed</Button>
                             <Switch className={`absolute top-1/4 left-1/3 ${isFixed ? `` : `remove-focus`}`}></Switch>
                             <Input className="absolute top-2/3 left-1/4 w-1/3 bg-white" type="email" placeholder="Email" />
                         </div>
-                        <p className="text-orange-600">Once you are done, press &quot;D&quot; to see if you got it right</p>
+                        <p className="text-orange-600">Once you are sure that you have focussed the switch, press &quot;D&quot; to see if you got it right</p>
                     </div>}
 
             </div>
