@@ -1,6 +1,7 @@
 "use client"
 
 import { ContentOnFocusOrHover } from "@/components/ContentOnHoverOrFocus"
+import { FocusVisible } from "@/components/FocusVisible"
 import { TextSpacing } from "@/components/TextSpacing"
 
 export default function Home() {
@@ -12,6 +13,9 @@ export default function Home() {
       </div>
       <div className="mb-36">
         <ContentOnFocusOrHover />
+      </div>
+      <div className="mb-36">
+        <FocusVisible />
       </div>
     </div>
   )
