@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Switch } from "../ui/switch"
 import { Button } from "../ui/button"
 import { Input } from "../ui/input"
@@ -7,7 +7,22 @@ import { Input } from "../ui/input"
 export function FocusVisible() {
     const [isFixed, setIsFixed] = useState(false)
     const [isGameInProgress, setIsGameInProgress] = useState(false)
-    const gameRef = useRef<HTMLParagraphElement>(null)
+    const gameRef = useRef<HTMLDivElement>(null)
+
+    function handleClick(e: MouseEvent) {
+        if (gameRef.current?.contains(e.target as Element)) {
+            console.log(e)
+            e.preventDefault()
+            e.stopPropagation()
+            alert("Tsk tsk tsk, keyboard only, remember?")
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClick, true)
+
+        return () => document.removeEventListener("mousedown", handleClick)
+    }, [])
 
     return (
         <div className="px-4">
@@ -34,19 +49,9 @@ export function FocusVisible() {
             </div>
             <div className="grid grid-cols-3 gap-8">
                 <style>{`
-                            .remove-focus:focus {
-                                outline: none !important;
-                                box-shadow: none !important;
-                                }
-
-                                .remove-focus:focus-visible {
-                                outline: none !important;
-                                box-shadow: none !important;
-                                }
-
-                                .remove-focus:focus-within {
-                                outline: none !important;
-                                box-shadow: none !important;
+                            .remove-focus:focus-visible {
+                                outline: none;
+                                box-shadow: none;
                             }
                 `}</style>
                 <div className="col-span-1">
@@ -72,13 +77,22 @@ export function FocusVisible() {
                             }
                         }}
                     >
-                        <h3 className="font-bold mb-2 text-orange-600">In the group below, can you focus the switch element with your keyboard?</h3>
+                        <h3 className="font-bold mb-2 text-orange-600">Can you focus the switch element with your keyboard?</h3>
                         <p className="text-orange-600 mb-8">Use Tab and Shift+Tab to move focus</p>
-                        <div className="relative h-44 mb-8 bg-yellow-50">
-                            <a href="#" className="absolute top-1/3 right-[40%]">A hyyyper link</a>
-                            <Button className={`absolute top-1/2 left-2/3 ${isFixed ? `` : `remove-focus`}`}>I might be focussed</Button>
-                            <Switch className={`absolute top-1/4 left-1/3 ${isFixed ? `` : `remove-focus`}`}></Switch>
-                            <Input className="absolute top-2/3 left-1/4 w-1/3 bg-white" type="email" placeholder="Email" />
+                        <div className="flex flex-wrap p-4 mb-8 bg-yellow-50">
+                            <div className="order-1 basis-1/2 flex items-center justify-center p-4">
+                                <a href="#">A hyper link</a>
+                            </div>
+                            <div className="order-3 basis-1/2 flex items-center justify-center p-4">
+                                <Button className={`${isFixed ? `focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2` : `remove-focus`}`}>Don&apos;t focus me</Button>
+                            </div>
+                            <div className="order-2 basis-1/2 flex gap-2 items-center justify-center p-4">
+                                <Switch id="switch-to-focus" className={`${isFixed ? `` : `remove-focus`}`}></Switch>
+                                <label htmlFor="switch-to-focus">Focus me</label>
+                            </div>
+                            <div className="order-4 basis-1/2 flex items-center justify-center p-4">
+                                <Input className="w-1/2 bg-white mx-auto" type="email" placeholder="Email" />
+                            </div>
                         </div>
                         <p className="text-orange-600">Once you are sure that you have focussed the switch, press &quot;D&quot; to see if you got it right</p>
                     </div>}
