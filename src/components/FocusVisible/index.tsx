@@ -77,9 +77,9 @@ export function FocusVisible() {
                             }
                         }}
                     >
-                        <h3 className="font-bold mb-2 text-orange-600">Can you focus the switch element with your keyboard?</h3>
-                        <p className="text-orange-600 mb-8">Use Tab and Shift+Tab to move focus</p>
-                        <div className="flex flex-wrap p-4 mb-8 bg-yellow-50">
+                        <h3 className="font-bold mb-2 text-orange-600">Can you toggle the &quot;switch&quot; element, with your keyboard?</h3>
+                        <p className="text-orange-600 mb-8">Use Tab and Shift+Tab to move focus, Space to toggle</p>
+                        <div className="flex flex-wrap p-4 bg-yellow-50">
                             <div className="order-1 basis-1/2 flex items-center justify-center p-4">
                                 <a href="#">A hyper link</a>
                             </div>
@@ -94,7 +94,6 @@ export function FocusVisible() {
                                 <Input className="w-1/2 bg-white mx-auto" type="email" placeholder="Email" />
                             </div>
                         </div>
-                        <p className="text-orange-600">Once you are sure that you have focussed the switch, press &quot;D&quot; to see if you got it right</p>
                     </div>}
 
             </div>
