@@ -25,7 +25,7 @@ export function FocusVisible() {
     }, [])
 
     return (
-        <div className="px-4">
+        <section id="focus-visible" className="px-4">
             <div className="grid grid-cols-3 gap-8 justify-between items-center bg-slate-100 rounded-lg px-2 py-4 mb-4">
                 <h2 className="text-2xl">
                     2.4.7 Focus visible
@@ -57,6 +57,7 @@ export function FocusVisible() {
                 <div className="col-span-1">
                     <p className="mb-2">Let&apos;s play a game called <br /> <b>Hocus Pocus, where&apos;s the focus?</b></p>
                     <Button
+                        className="mb-8"
                         onClick={() => {
                             setIsGameInProgress((isGameInProgress) => !isGameInProgress)
                             setTimeout(() => {
@@ -66,6 +67,9 @@ export function FocusVisible() {
                     >
                         {isGameInProgress ? `End game` : `Start game`}
                     </Button>
+                    {isGameInProgress &&
+                        <p><b>Moral of the story:</b> Do not remove focus indicators on elements. Modify, but do not remove fully.</p>
+                    }
                 </div>
                 {isGameInProgress &&
                     <div
@@ -95,26 +99,7 @@ export function FocusVisible() {
                             </div>
                         </div>
                     </div>}
-
             </div>
-            {/* <div className="grid grid-cols-3 gap-8">
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className="font-bold mb-2 text-orange-600">Hoverable tooltips</h3>
-                    <p className="text-orange-600 mb-8">Once the tooltip appears, move your mouse into the tooltip content and see if the tooltip disappears</p>
-                    {isFixed ? <HoverableFixed /> : <HoverableBroken />}
-                </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className="font-bold mb-2 text-orange-600">Persistent tooltips</h3>
-                    <p className="text-orange-600 mb-8">Once the tooltip appears, see if the tooltip holds as long as you hover(or focus the trigger)</p>
-                    {isFixed ? <PersistentFixed /> : <PersistentBroken />}
-                </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className="font-bold mb-2 text-orange-600">Dismissible tooltips</h3>
-                    <p className="text-orange-600 mb-8">Once the tooltip appears, press Esc and check if it can be dismissed</p>
-                    {isFixed ? <DismissibleFixed /> : <DismissibleBroken />}
-                </div>
-
-            </div> */}
-        </div >
+        </section>
     )
 }

@@ -11,7 +11,7 @@ export function ContentOnFocusOrHover() {
     const [isFixed, setIsFixed] = useState(false)
 
     return (
-        <div className="px-4">
+        <section id="content-on-hover-or-focus" className="px-4">
             <div className="grid grid-cols-3 gap-8 justify-between items-center bg-slate-100 rounded-lg px-2 py-4 mb-4">
                 <h2 className="text-2xl">
                     1.4.13 Content on hover or focus
@@ -51,6 +51,6 @@ export function ContentOnFocusOrHover() {
                 </div>
 
             </div>
-        </div >
+        </section>
     )
 }

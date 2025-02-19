@@ -19,7 +19,7 @@ export function TextSpacing() {
     // const [applyWCAGValues, setApplyWCAGValues] = useState(true)
 
     return (
-        <div className="px-4">
+        <section id="text-spacing" className="px-4">
             {true &&
                 <style>
                     {`
@@ -68,7 +68,7 @@ export function TextSpacing() {
                 <span className="flex items-center">
                     WCAG recommended text spacing values are applied to examples
                     <TooltipProvider>
-                        <Tooltip delayDuration={200}>
+                        <Tooltip delayDuration={200} defaultOpen={true}>
                             <TooltipTrigger asChild>
                                 <Button variant="ghost" className="w-fit mx-auto px-2 py-0">ⓘ</Button>
                             </TooltipTrigger>
@@ -102,6 +102,6 @@ export function TextSpacing() {
                 </div>
 
             </div>
-        </div>
+        </section>
     )
 }
