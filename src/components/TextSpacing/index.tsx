@@ -56,7 +56,7 @@ export function TextSpacing() {
                 </div>
             </div>
 
-            <div className="flex gap-2 items-center mb-4">
+            <div className="flex gap-2 items-center mb-2">
                 {/* <label htmlFor="text-spacing-apply-wcag-values">Apply WCAG text spacing values</label>
                 <Switch
                     checked={applyWCAGValues}
@@ -86,6 +86,8 @@ export function TextSpacing() {
                     </TooltipProvider>
                 </span>
             </div>
+
+            <p className="mb-4">To allow variation in text spacing, avoid fixed widths for buttons, fixed heights for table rows, fixed heights for heights without scroll for overflow. </p>
 
             <div id="text-spacing-wcag" className="grid grid-cols-3 gap-8">
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
