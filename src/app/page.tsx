@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="text-4xl text-center mt-12 mb-24">Learn WCAG success criteria through examples </h1>
+      <h1 className="text-4xl text-center mt-12 mb-24">WCAG Success Criteria examples gallery</h1>
       <div className="mb-36">
         <TextSpacing />
       </div>
