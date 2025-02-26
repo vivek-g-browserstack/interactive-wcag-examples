@@ -55,7 +55,7 @@ export function FocusVisible() {
                             }
                 `}</style>
                 <div className="col-span-1">
-                    <p className="mb-2">Let&apos;s play a game called <br /> <b>Hocus Pocus, where&apos;s the focus?</b></p>
+                    <p className="mb-2">Let&apos;s play a game</p>
                     <Button
                         className="mb-8"
                         onClick={() => {
