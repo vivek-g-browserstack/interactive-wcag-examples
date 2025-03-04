@@ -1,8 +1,9 @@
 "use client"
 
-import { ContentOnFocusOrHover } from "@/components/ContentOnHoverOrFocus"
-import { FocusVisible } from "@/components/FocusVisible"
-import { TextSpacing } from "@/components/TextSpacing"
+import { ContentOnFocusOrHover } from "@/components/SCs/ContentOnHoverOrFocus"
+import { FocusVisible } from "@/components/SCs/FocusVisible"
+import { NameRoleValue } from "@/components/SCs/NameRoleValue"
+import { TextSpacing } from "@/components/SCs/TextSpacing"
 import { useScrollToAnchorHash } from "@/hooks/useScrolltoAnchorHash"
 
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
       </div>
       <div className="mb-36">
         <FocusVisible />
+      </div>
+      <div className="mb-36">
+        <NameRoleValue />
       </div>
     </div>
   )

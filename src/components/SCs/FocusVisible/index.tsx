@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react"
-import { Switch } from "../ui/switch"
-import { Button } from "../ui/button"
-import { Input } from "../ui/input"
+import { Switch } from "../../ui/switch"
+import { Button } from "../../ui/button"
+import { Input } from "../../ui/input"
+import { SCHeading } from "@/components/SCHeading"
 
 
 export function FocusVisible() {
@@ -26,27 +27,13 @@ export function FocusVisible() {
 
     return (
         <section id="focus-visible" className="px-4">
-            <div className="grid grid-cols-3 gap-8 justify-between items-center bg-slate-100 rounded-lg px-2 py-4 mb-4">
-                <h2 className="text-2xl">
-                    2.4.7 Focus visible
-                </h2>
-                <a
-                    href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html" target="_blank"
-                    className="text-center"
-                >
-                    Detailed explanation
-                </a>
-                <div className="flex gap-2 justify-end items-center">
-                    <label htmlFor="focus-visible-compliance">Make examples compliant</label>
-                    <Switch
-                        checked={isFixed}
-                        id="focus-visible-compliance"
-                        onCheckedChange={(state) => {
-                            setIsFixed(state)
-                        }}
-                    />
-                </div>
-            </div>
+            <SCHeading
+                title="2.4.7 Focus visible"
+                href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html"
+                toggleId="focus-visible-compliance"
+                isFixed={isFixed}
+                setIsFixed={setIsFixed}
+            />
             <div className="grid grid-cols-3 gap-8">
                 <style>{`
                             .remove-focus:focus-visible {

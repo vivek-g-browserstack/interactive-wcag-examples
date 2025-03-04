@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Switch } from "../ui/switch"
 import { ButtonBroken } from "./broken/Button"
 import { CardBroken } from "./broken/Card"
 import { TableBroken } from "./broken/Table"
@@ -13,6 +12,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { SCHeading } from "@/components/SCHeading"
 
 export function TextSpacing() {
     const [isFixed, setIsFixed] = useState(false)
@@ -35,27 +35,13 @@ export function TextSpacing() {
                 `}
                 </style>
             }
-            <div className="grid grid-cols-3 gap-8 justify-between items-center bg-slate-100 rounded-lg px-2 py-4 mb-2">
-                <h2 className="text-2xl">
-                    1.4.12 Text spacing
-                </h2>
-                <a
-                    href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing" target="_blank"
-                    className="text-center"
-                >
-                    Detailed explanation
-                </a>
-                <div className="flex gap-2 justify-end items-center">
-                    <label htmlFor="text-spacing-compliance">Make examples compliant</label>
-                    <Switch
-                        id="text-spacing-compliance"
-                        onCheckedChange={(state) => {
-                            setIsFixed(state)
-                        }}
-                    />
-                </div>
-            </div>
-
+            <SCHeading
+                title="1.4.12 Text spacing"
+                href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing"
+                toggleId="text-spacing-compliance"
+                isFixed={isFixed}
+                setIsFixed={setIsFixed}
+            />
             <div className="flex gap-2 items-center mb-2">
                 {/* <label htmlFor="text-spacing-apply-wcag-values">Apply WCAG text spacing values</label>
                 <Switch
