@@ -1,7 +1,7 @@
 export function HoverableCardFixed({ interactionMethod }: { interactionMethod: "mouse" | "keyboard" }) {
     return (
         <button
-            className="text-left flex flex-col items-start w-full h-64 p-8 bg-gradient-to-b from-stone-700 to-stone-400 rounded-lg text-white group"
+            className="text-left flex flex-col items-start w-full h-64 p-8 bg-gradient-to-b from-stone-700 to-stone-400 rounded-lg text-white group hover:cursor-default"
             aria-label={interactionMethod === "mouse" ? `Hover me?` : `Focus me with keyboard?`}
             aria-describedby="hover-card-description"
         >
