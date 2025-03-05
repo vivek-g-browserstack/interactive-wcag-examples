@@ -26,7 +26,7 @@ export function NameRoleValue() {
                 <div
                     className="p-4 rounded-lg border-4 border-dashed border-slate-200"
                 >
-                    <h2 className="text-xl mb-4 font-bold">Here is a card that has a hover interaction</h2>
+                    <h2 className="text-xl mb-6 font-bold">A card with hover interaction</h2>
                     <div className="grid grid-cols-3 gap-8">
                         <div>
                             <h3 className="font-bold mb-2 text-orange-600">How mouse users experience it</h3>
