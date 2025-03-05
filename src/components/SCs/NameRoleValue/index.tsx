@@ -22,6 +22,7 @@ export function NameRoleValue() {
                 isFixed={isFixed}
                 setIsFixed={setIsFixed}
             />
+            <p className="mb-4">Non standard UI components cannot be consumed by assistive technology, if they do not have name, role, state, value.</p>
             <div>
                 <div
                     className="p-4 rounded-lg border-4 border-dashed border-slate-200"

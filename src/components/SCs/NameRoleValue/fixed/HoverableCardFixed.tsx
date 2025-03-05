@@ -2,7 +2,7 @@ export function HoverableCardFixed({ interactionMethod }: { interactionMethod: "
     const randomNumber = Math.floor((Math.random() * 1000))
     return (
         <button
-            className="text-left flex flex-col items-start w-full h-64 p-8 bg-gradient-to-b from-[#4568DC] to-[#B06AB3] rounded-lg text-white group cursor-default"
+            className={`text-left flex flex-col items-start w-full h-64 p-8 bg-gradient-to-b from-[#4568DC] to-[#B06AB3] rounded-lg text-white group cursor-default ${interactionMethod === "keyboard" ? `pointer-events-none` : ``}`}
             aria-label={interactionMethod === "mouse" ? `Hover me?` : `Focus me with keyboard?`}
             aria-describedby={`hover-card-description-${randomNumber}`}
         >
