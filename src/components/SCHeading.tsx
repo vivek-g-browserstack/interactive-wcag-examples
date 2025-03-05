@@ -19,7 +19,7 @@ export function SCHeading({ title, href, toggleId, isFixed, setIsFixed }: SCHead
             <a
                 href={href}
                 target="_blank"
-                className="text-center"
+                className="text-center w-fit mx-auto"
             >
                 Detailed explanation
             </a>

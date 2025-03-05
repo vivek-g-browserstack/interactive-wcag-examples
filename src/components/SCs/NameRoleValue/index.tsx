@@ -22,7 +22,7 @@ export function NameRoleValue() {
                 isFixed={isFixed}
                 setIsFixed={setIsFixed}
             />
-            <p className="mb-4">Non standard UI components cannot be consumed by assistive technology, if they do not have name, role, state, value.</p>
+            <p className="mb-4">Non standard UI components cannot be consumed by assistive technology, if they do not have proper name, role, state and value.</p>
             <div>
                 <div
                     className="p-4 rounded-lg border-4 border-dashed border-slate-200"
@@ -30,21 +30,21 @@ export function NameRoleValue() {
                     <h2 className="text-xl mb-6 font-bold">A card with hover interaction</h2>
                     <div className="grid grid-cols-3 gap-8">
                         <div>
-                            <h3 className="font-bold mb-2 text-orange-600">How mouse users experience it</h3>
+                            <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>How mouse users experience it</h3>
                             {isFixed
                                 ? <HoverableCardFixed interactionMethod="mouse" />
                                 : <HoverableCardBroken interactionMethod="mouse" />
                             }
                         </div>
                         <div>
-                            <h3 className="font-bold mb-2 text-orange-600">How keyboard users experience it</h3>
+                            <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>How keyboard users experience it</h3>
                             {isFixed
                                 ? <HoverableCardFixed interactionMethod="keyboard" />
                                 : <HoverableCardBroken interactionMethod="keyboard" />
                             }
                         </div>
                         <div className="flex flex-col">
-                            <h3 className="font-bold mb-2 text-orange-600"> How screen reader users experience it</h3>
+                            <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}> How screen reader users experience it</h3>
                             {isFixed
                                 ?
                                 // <HoverableCardFixed interactionMethod="screen-reader" />

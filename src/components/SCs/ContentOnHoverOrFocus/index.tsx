@@ -21,18 +21,18 @@ export function ContentOnFocusOrHover() {
             />
             <div className="grid grid-cols-3 gap-8">
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className="font-bold mb-2 text-orange-600">Hoverable tooltips</h3>
-                    <p className="text-orange-600 mb-8">Once the tooltip appears, move your mouse into the tooltip content and see if the tooltip disappears</p>
+                    <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>Hoverable tooltips</h3>
+                    <p className="text-slate-500 mb-8">Once the tooltip appears, move your mouse into the tooltip content and see if the tooltip disappears</p>
                     {isFixed ? <HoverableFixed /> : <HoverableBroken />}
                 </div>
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className="font-bold mb-2 text-orange-600">Persistent tooltips</h3>
-                    <p className="text-orange-600 mb-8">Once the tooltip appears, see if the tooltip holds as long as you hover(or focus the trigger)</p>
+                    <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>Persistent tooltips</h3>
+                    <p className="text-slate-500 mb-8">Once the tooltip appears, see if the tooltip holds as long as you hover(or focus the trigger)</p>
                     {isFixed ? <PersistentFixed /> : <PersistentBroken />}
                 </div>
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className="font-bold mb-2 text-orange-600">Dismissible tooltips</h3>
-                    <p className="text-orange-600 mb-8">Once the tooltip appears, press Esc and check if it can be dismissed</p>
+                    <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>Dismissible tooltips</h3>
+                    <p className="text-slate-500 mb-8">Once the tooltip appears, press Esc and check if it can be dismissed</p>
                     {isFixed ? <DismissibleFixed /> : <DismissibleBroken />}
                 </div>
 
