@@ -77,15 +77,15 @@ export function TextSpacing() {
 
             <div id="text-spacing-wcag" className="grid grid-cols-3 gap-8">
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className={`font-bold mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Buttons {isFixed ? `without` : `with`}  fixed widths</h3>
+                    <h3 className={`font-bold text-xl text-center mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Buttons {isFixed ? `without` : `with`}  fixed widths</h3>
                     {isFixed ? <ButtonFixed /> : <ButtonBroken />}
                 </div>
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className={`font-bold mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Table rows {isFixed ? `without` : `with`}  fixed heights</h3>
+                    <h3 className={`font-bold text-xl text-center mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Table rows {isFixed ? `without` : `with`}  fixed heights</h3>
                     {isFixed ? <TableFixed /> : <TableBroken />}
                 </div>
                 <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className={`font-bold mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Cards with fixed heights{isFixed && `, not cut off`}</h3>
+                    <h3 className={`font-bold text-xl text-center mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Cards with fixed heights{isFixed && `, no cut off`}</h3>
                     {isFixed ? <CardFixed /> : <CardBroken />}
                 </div>
 

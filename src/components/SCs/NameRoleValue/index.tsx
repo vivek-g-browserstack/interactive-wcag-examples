@@ -27,24 +27,24 @@ export function NameRoleValue() {
                 <div
                     className="p-4 rounded-lg border-4 border-dashed border-slate-200"
                 >
-                    <h2 className="text-xl mb-6 font-bold">A card with hover interaction</h2>
+                    <h2 className="text-xl mb-6 font-bold text-center">A card with hover interaction</h2>
                     <div className="grid grid-cols-3 gap-8">
                         <div>
-                            <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>How mouse users experience it</h3>
+                            <h3 className={`font-bold text-xl text-center mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>How mouse users experience it</h3>
                             {isFixed
                                 ? <HoverableCardFixed interactionMethod="mouse" />
                                 : <HoverableCardBroken interactionMethod="mouse" />
                             }
                         </div>
                         <div>
-                            <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>How keyboard users experience it</h3>
+                            <h3 className={`font-bold text-xl text-center mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}>How keyboard users experience it</h3>
                             {isFixed
                                 ? <HoverableCardFixed interactionMethod="keyboard" />
                                 : <HoverableCardBroken interactionMethod="keyboard" />
                             }
                         </div>
                         <div className="flex flex-col">
-                            <h3 className={`font-bold mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}> How screen reader users experience it</h3>
+                            <h3 className={`font-bold text-xl text-center mb-2 ${isFixed ? `text-green-700` : `text-red-600`}`}> How screen reader users experience it</h3>
                             {isFixed
                                 ?
                                 // <HoverableCardFixed interactionMethod="screen-reader" />
