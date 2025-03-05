@@ -26,6 +26,7 @@ export function SCHeading({ title, href, toggleId, isFixed, setIsFixed }: SCHead
             <div className="flex gap-2 justify-end items-center">
                 <label htmlFor={toggleId}>Make examples compliant</label>
                 <Switch
+                    aria-label={`Toggle compliance of ${title}`}
                     checked={isFixed}
                     id={toggleId}
                     onCheckedChange={(state) => {
