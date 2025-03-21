@@ -11,7 +11,7 @@ export function ContentOnFocusOrHover() {
     const [isFixed, setIsFixed] = useState(false)
 
     return (
-        <section id="content-on-hover-or-focus" className="px-4">
+        <section id="content-on-hover-or-focus" className="mx-4">
             <SCHeading
                 title="1.4.13 Content on hover or focus"
                 href="https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html"

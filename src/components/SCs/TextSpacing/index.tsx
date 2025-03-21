@@ -19,7 +19,7 @@ export function TextSpacing() {
     // const [applyWCAGValues, setApplyWCAGValues] = useState(true)
 
     return (
-        <section id="text-spacing" className="px-4">
+        <section id="text-spacing" className="mx-4">
             {true &&
                 <style>
                     {`

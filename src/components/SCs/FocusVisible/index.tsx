@@ -26,7 +26,7 @@ export function FocusVisible() {
     }, [])
 
     return (
-        <section id="focus-visible" className="px-4">
+        <section id="focus-visible" className="mx-4">
             <SCHeading
                 title="2.4.7 Focus visible"
                 href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible.html"
