@@ -13,9 +13,11 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { SCHeading } from "@/components/SCHeading"
+import { useReflowStore } from "@/store/reflowStore"
 
 export function TextSpacing() {
     const [isFixed, setIsFixed] = useState(false)
+    const { isResponsive } = useReflowStore()
     // const [applyWCAGValues, setApplyWCAGValues] = useState(true)
 
     return (
@@ -42,7 +44,7 @@ export function TextSpacing() {
                 isFixed={isFixed}
                 setIsFixed={setIsFixed}
             />
-            <div className="flex gap-2 items-center mb-2">
+            <div className={`flex ${isResponsive ? 'flex-col sm:flex-row' : 'flex-row'} gap-2 items-center mb-2`}>
                 {/* <label htmlFor="text-spacing-apply-wcag-values">Apply WCAG text spacing values</label>
                 <Switch
                     checked={applyWCAGValues}
@@ -51,16 +53,16 @@ export function TextSpacing() {
                         setApplyWCAGValues(state)
                     }}
                 /> */}
-                <span className="flex items-center">
+                <span className={`flex items-center ${isResponsive ? 'text-sm sm:text-base' : ''}`}>
                     WCAG recommended text spacing values are applied to examples
                     <TooltipProvider>
                         <Tooltip delayDuration={200} defaultOpen={true}>
                             <TooltipTrigger asChild>
-                                <Button variant="ghost" className="w-fit mx-auto px-2 py-0">ⓘ</Button>
+                                <Button variant="ghost" className={`w-fit mx-auto px-2 py-0 ${isResponsive ? 'text-sm sm:text-base' : ''}`}>ⓘ</Button>
                             </TooltipTrigger>
                             <TooltipContent>
-                                <p className="w-84">
-                                    <code>
+                                <p className={`${isResponsive ? 'w-64 sm:w-84' : 'w-84'}`}>
+                                    <code className={`${isResponsive ? 'text-xs sm:text-sm' : ''}`}>
                                         line-height: 1.5; <br />
                                         letter-spacing: 0.12em;  <br />
                                         word-spacing: 0.16em;  <br />
@@ -73,22 +75,21 @@ export function TextSpacing() {
                 </span>
             </div>
 
-            <p className="mb-4">To allow variation in text spacing, avoid fixed widths for buttons, fixed heights for table rows, fixed heights for heights without scroll for overflow. </p>
+            <p className={`mb-4 ${isResponsive ? 'text-sm sm:text-base' : ''}`}>To allow variation in text spacing, avoid fixed widths for buttons, fixed heights for table rows, fixed heights for heights without scroll for overflow. </p>
 
-            <div id="text-spacing-wcag" className="grid grid-cols-3 gap-8">
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className={`font-bold text-xl text-center mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Buttons {isFixed ? `without` : `with`}  fixed widths</h3>
+            <div id="text-spacing-wcag" className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-4 sm:gap-6 md:gap-8`}>
+                <div className={`p-3 sm:p-4 rounded-lg border-4 border-dashed border-slate-200`}>
+                    <h3 className={`font-bold ${isResponsive ? 'text-lg sm:text-xl' : 'text-xl'} text-center mb-3 sm:mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Buttons {isFixed ? `without` : `with`}  fixed widths</h3>
                     {isFixed ? <ButtonFixed /> : <ButtonBroken />}
                 </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className={`font-bold text-xl text-center mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Table rows {isFixed ? `without` : `with`}  fixed heights</h3>
+                <div className={`p-3 sm:p-4 rounded-lg border-4 border-dashed border-slate-200`}>
+                    <h3 className={`font-bold ${isResponsive ? 'text-lg sm:text-xl' : 'text-xl'} text-center mb-3 sm:mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Table rows {isFixed ? `without` : `with`}  fixed heights</h3>
                     {isFixed ? <TableFixed /> : <TableBroken />}
                 </div>
-                <div className="p-4 rounded-lg border-4 border-dashed border-slate-200">
-                    <h3 className={`font-bold text-xl text-center mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Cards with fixed heights{isFixed && `, no cut off`}</h3>
+                <div className={`p-3 sm:p-4 rounded-lg border-4 border-dashed border-slate-200`}>
+                    <h3 className={`font-bold ${isResponsive ? 'text-lg sm:text-xl' : 'text-xl'} text-center mb-3 sm:mb-4 ${isFixed ? `text-green-700` : `text-red-600`}`}>Cards with fixed heights{isFixed && `, no cut off`}</h3>
                     {isFixed ? <CardFixed /> : <CardBroken />}
                 </div>
-
             </div>
         </section>
     )
