@@ -19,7 +19,7 @@ export function Reflow() {
                     Zoom this page to 400% or set the page width to 320px or height to 256px
                 </h3>
                 <p className={`text-center text-sm sm:text-base ${isResponsive ? `text-green-700` : `text-red-600`}`}>
-                    {isResponsive ? "This page does not require scrolling in both horizontal and vertical directions to access any content. No content or functionality is hidden or obstructed, except for the table where two dimnensional scroll is permitted." : "This page requires scrolling in both horizontal and vertical directions to access content in some sections. Further, some content and functionality is difficult to access."}
+                    {isResponsive ? "This page does not require scrolling in both horizontal and vertical directions to access content. No content or functionality is hidden or obstructed, except for the table where two dimnensional scroll is permitted." : "This page requires scrolling in both horizontal and vertical directions to access content in some sections. Further, some content and functionality is difficult to access."}
                 </p>
             </div>
         </section>

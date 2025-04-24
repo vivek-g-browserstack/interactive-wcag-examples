@@ -56,7 +56,7 @@ export function TextSpacing() {
                 <span className={`flex items-center ${isResponsive ? 'text-sm sm:text-base' : ''}`}>
                     WCAG recommended text spacing values are applied to examples
                     <TooltipProvider>
-                        <Tooltip delayDuration={200} defaultOpen={true}>
+                        <Tooltip delayDuration={200}>
                             <TooltipTrigger asChild>
                                 <Button variant="ghost" className={`w-fit mx-auto px-2 py-0 ${isResponsive ? 'text-sm sm:text-base' : ''}`}>ⓘ</Button>
                             </TooltipTrigger>
