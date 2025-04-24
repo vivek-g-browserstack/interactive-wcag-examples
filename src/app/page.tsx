@@ -6,7 +6,6 @@ import { NameRoleValue } from "@/components/SCs/NameRoleValue"
 import { TextSpacing } from "@/components/SCs/TextSpacing"
 import { Reflow } from "@/components/SCs/Reflow"
 import { useScrollToAnchorHash } from "@/hooks/useScrolltoAnchorHash"
-import { useReflowStore } from "@/store/reflowStore"
 
 export default function Home() {
   useScrollToAnchorHash()
