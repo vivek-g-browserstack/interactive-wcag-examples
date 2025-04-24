@@ -22,6 +22,12 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased py-4`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:border-2 focus:border-blue-600 focus:outline-none"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

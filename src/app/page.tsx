@@ -10,10 +10,9 @@ import { useReflowStore } from "@/store/reflowStore"
 
 export default function Home() {
   useScrollToAnchorHash()
-  const { isResponsive } = useReflowStore()
 
   return (
-    <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto">
+    <main id="main-content" className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto">
       <h1 className="text-2xl sm:text-3xl md:text-4xl text-center mt-8 sm:mt-10 md:mt-12 mb-16 sm:mb-20 md:mb-24">WCAG Success Criteria examples gallery</h1>
       <div className="mb-24 sm:mb-28 md:mb-32 lg:mb-36">
         <Reflow />
@@ -30,6 +29,6 @@ export default function Home() {
       <div className="mb-24 sm:mb-28 md:mb-32 lg:mb-36">
         <NameRoleValue />
       </div>
-    </div>
+    </main>
   )
 }
