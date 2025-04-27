@@ -32,7 +32,7 @@ export function ContentOnFocusOrHover() {
                             className={`font-bold font-display italic text-xl flex items-center mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}
                         >
                             <span className="material-symbols-outlined">deployed_code</span>
-                            &nbsp;Hoverable tooltips
+                            &nbsp;{isFixed ? `Hoverable` : `Non hoverable`} tooltips
                         </h3>
                         <p className={`text-slate-500 ${isResponsive ? 'text-sm sm:text-base' : ''} mb-8`}>Once the tooltip appears, move your mouse into the tooltip content and see if the tooltip disappears</p>
                         {isFixed ? <HoverableFixed /> : <HoverableBroken />}
@@ -41,7 +41,7 @@ export function ContentOnFocusOrHover() {
                         <h3
                             className={`font-bold font-display italic flex items-center text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}>
                             <span className="material-symbols-outlined">deployed_code</span>
-                            &nbsp;Persistent tooltips
+                            &nbsp;{isFixed ? `Persistent` : `Non persistent`} tooltips
                         </h3>
                         <p className={`text-slate-500 mb-8`}>Once the tooltip appears, see if the tooltip holds as long as you hover(or focus the trigger)</p>
                         {isFixed ? <PersistentFixed /> : <PersistentBroken />}
@@ -51,7 +51,7 @@ export function ContentOnFocusOrHover() {
                             className={`font-bold font-display italic flex items-center text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}
                         >
                             <span className="material-symbols-outlined">deployed_code</span>
-                            &nbsp;Dismissible tooltips
+                            &nbsp;{isFixed ? `Dismissible` : `In-dismissible`} tooltips
                         </h3>
                         <p className={`text-slate-500 mb-8`}>Once the tooltip appears, press Esc and check if it can be dismissed</p>
                         {isFixed ? <DismissibleFixed /> : <DismissibleBroken />}
