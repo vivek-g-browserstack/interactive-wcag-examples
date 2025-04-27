@@ -6,28 +6,53 @@ import { NameRoleValue } from "@/components/SCs/NameRoleValue"
 import { TextSpacing } from "@/components/SCs/TextSpacing"
 import { Reflow } from "@/components/SCs/Reflow"
 import { useScrollToAnchorHash } from "@/hooks/useScrolltoAnchorHash"
+import Section from "@/components/Section"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   useScrollToAnchorHash()
 
   return (
-    <main id="main-content" className="px-2 md:px-4 lg:px-4 max-w-[1600px] mx-auto">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl text-center mt-8 sm:mt-10 md:mt-12 mb-16 sm:mb-20 md:mb-24">WCAG Success Criteria examples gallery</h1>
-      <div className="mb-24 sm:mb-28 md:mb-32 lg:mb-36">
+    <main id="main-content" className="px-4 md:px-6 lg:px-8 max-w-[1600px] mx-auto">
+      <h1
+        className="font-extrabold flex justify-between items-center text-4xl mt-4 mb-16"
+      >
+        <span className="flex gap-4 items-center">
+          WCAG examples gallery
+          <span
+            className="material-symbols-outlined text-neutral-strong text-4xl"
+            style={{ fontSize: "2.5rem" }}>
+            person_celebrate
+          </span>
+        </span>
+        <Button
+          variant="ghost"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+          onClick={() => {
+            document.querySelector("html")?.classList.toggle("dark")
+          }}
+        >
+          <span className="text-sm material-symbols-outlined text-brand-default">
+            dark_mode
+          </span>
+        </Button>
+      </h1>
+      <Section>
         <Reflow />
-      </div>
-      <div className="mb-24 sm:mb-28 md:mb-32 lg:mb-36">
+      </Section>
+      <Section>
         <TextSpacing />
-      </div>
-      <div className="mb-24 sm:mb-28 md:mb-32 lg:mb-36">
+      </Section>
+      <Section>
         <ContentOnFocusOrHover />
-      </div>
-      <div className="mb-24 sm:mb-28 md:mb-32 lg:mb-36">
+      </Section>
+      <Section>
         <FocusVisible />
-      </div>
-      <div className="mb-24 sm:mb-28 md:mb-32 lg:mb-36">
+      </Section>
+      <Section>
         <NameRoleValue />
-      </div>
+      </Section>
     </main>
   )
 }

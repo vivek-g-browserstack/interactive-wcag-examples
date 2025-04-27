@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button"
 
 export function ButtonFixed() {
     return (
-        <nav className="max-w-[278px] mx-auto border border-slate-300 p-4 rounded">
+        <nav className="max-w-[278px] bg-neutral-default border border-neutral-strong p-4 rounded">
             <ul className="flex flex-col gap-4">
-                <li className="border-b border-slate-300">Home</li>
-                <li className="border-b border-slate-300">Reports</li>
-                <li className="border-b border-slate-300">Settings</li>
+                <li className="border-b border-neutral-strong">Home</li>
+                <li className="border-b border-neutral-strong">Reports</li>
+                <li className="border-b border-neutral-strong">Settings</li>
                 <li>
                     <div className="flex gap-4 flex-wrap">
                         <Button
@@ -15,7 +15,7 @@ export function ButtonFixed() {
                             New project
                         </Button>
                         <Button
-                            variant="secondary"
+                            variant="outline"
                             className="block"
                         >
                             Get support

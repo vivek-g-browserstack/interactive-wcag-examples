@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+src/styles/_colors.scss
+src/styles/_default-theme.scss
+src/styles/ds-tailwind.config.js
