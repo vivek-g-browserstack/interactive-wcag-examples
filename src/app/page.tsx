@@ -8,9 +8,21 @@ import { Reflow } from "@/components/SCs/Reflow"
 import { useScrollToAnchorHash } from "@/hooks/useScrolltoAnchorHash"
 import Section from "@/components/Section"
 import { Button } from "@/components/ui/button"
+import { useReflowStore } from "@/store/reflowStore"
+import { useEffect } from "react"
 
 export default function Home() {
   useScrollToAnchorHash()
+  const setIsResponsive = useReflowStore((state) => state.setIsResponsive);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const isCompliant = urlParams.get('compliant') === 'true'
+
+    if (isCompliant) {
+      setIsResponsive(true)
+    }
+  }, [])
 
   return (
     <main id="main-content" className="px-4 md:px-6 lg:px-8 max-w-[1600px] mx-auto">

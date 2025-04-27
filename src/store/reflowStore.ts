@@ -6,6 +6,6 @@ interface ReflowState {
 }
 
 export const useReflowStore = create<ReflowState>()((set) => ({
-  isResponsive: true,
+  isResponsive: false,
   setIsResponsive: (state: boolean) => set({ isResponsive: state })
 })) 
