@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import "./theme.css"
 import 'animate.css'
+import Script from "next/script"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,17 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block" />
       </head>
+      <Script id="mouseflow-analytics">
+        {`
+          window._mfq = window._mfq || [];
+          (function() {
+            var mf = document.createElement("script");
+            mf.type = "text/javascript"; mf.defer = true;
+            mf.src = "//cdn.mouseflow.com/projects/875f19ff-d677-4509-b395-07dc9d1d6e6c.js";
+            document.getElementsByTagName("head")[0].appendChild(mf);
+          })();
+        `}
+      </Script>
       <body
         className={`${inter.className} antialiased py-4 bg-surface-default text-neutral-default`}
       >
