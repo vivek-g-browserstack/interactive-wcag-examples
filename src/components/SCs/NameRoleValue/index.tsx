@@ -33,7 +33,7 @@ export function NameRoleValue() {
                 <ExampleCard isFixed={isFixed}>
                     <h2 className={`font-bold font-display italic flex items-center text-xl mb-4 sm:mb-6 ${isFixed ? `text-success-default` : `text-danger-default`}`}>
                         <span className="material-symbols-outlined">deployed_code</span>
-                        &nbsp;A card with hover interaction
+                        &nbsp;{isFixed ? `An accessible hover interaction` : `An inaccessible hover interaction`}
                     </h2>
                     <div className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-6`}>
                         <div className="flex flex-col justify-between">
