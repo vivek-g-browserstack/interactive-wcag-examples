@@ -35,7 +35,7 @@ export function NameRoleValue() {
                         <span className="material-symbols-outlined">deployed_code</span>
                         &nbsp;{isFixed ? `An accessible hover interaction` : `An inaccessible hover interaction`}
                     </h2>
-                    <div className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-6`}>
+                    <div className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-4`}>
                         <div className="flex flex-col justify-between">
                             <h3 className={`font-medium text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}>How mouse users experience it</h3>
                             {isFixed
@@ -57,10 +57,10 @@ export function NameRoleValue() {
                                 // <HoverableCardFixed interactionMethod="screen-reader" />
                                 <div className="p-8 border border-slate-700">
                                     <p className={`${spaceMono.className}`}>
-                                        <b>[aria-label]</b> Focus me with keyboard?
+                                        <b>Focus me with keyboard?</b>
                                     </p>
                                     <p className={`${spaceMono.className}`}>
-                                        <b>[aria-description]</b> This is one of those fancy cards on home pages. They show you more text on hover and sprinkle some more interaction magic.
+                                        This text is shown only on hover—often inaccessible to keyboard users and screen reader users. This is a common pattern in web design, but it can create accessibility issues for users who rely on keyboard navigation or screen readers.
                                     </p>
                                 </div>
                                 : <div className="min-h-64 p-8 border border-slate-700">
