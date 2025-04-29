@@ -24,11 +24,11 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
 
     return (
         <div className={`md:sticky md:top-0 md:z-20 bg-neutral-stronger rounded-t-lg flex ${isResponsive ? `flex-wrap` : ``} px-6 py-4 mb-6 gap-8 justify-between items-center shadow`}>
-            <div className={`flex ${isResponsive ? `flex-wrap` : ``} gap-4 items-center`}>
+            <div className={`flex ${isResponsive ? `flex-wrap` : ``} gap-2 items-center`}>
                 <div className="flex items-center">
                     <Button
                         variant="ghost"
-                        className="w-fit -ml-2"
+                        className="w-fit -mx-2"
                         aria-label="Copy link to this section"
                         title="Copy link to this section"
                         onClick={() => {
@@ -38,8 +38,8 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                             alert("Link copied to clipboard")
                         }}
                     >
-                        <span className="text-sm material-symbols-outlined text-brand-default -rotate-45">
-                            link
+                        <span className="text-sm material-symbols-outlined text-brand-default">
+                            tag
                         </span>
                     </Button>
                     <h2 className={`font-bold text-2xl`}>
@@ -51,12 +51,11 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                     href={href}
                     target="_blank"
                     aria-label="Detailed explanation of this SC"
-                    title="Detailed explanation of this SC"
                     rel="noreferrer"
                     className={`group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-strong focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-input-default shadow-sm text-neutral-weak border border-neutral-strong hover:bg-input-default-hover h-9 p-2`}
                 >
                     <span className="text-base material-symbols-outlined text-neutral-strong">
-                        menu_book
+                        open_in_new
                     </span>
                     <span className="hidden group-hover:block group-focus:block">Detailed explanation</span>
                 </a>

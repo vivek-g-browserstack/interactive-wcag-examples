@@ -51,7 +51,7 @@ export function FocusVisible() {
                     <div className={`${isResponsive ? 'md:col-span-1' : ''}`}>
                         <p className={`mb-2`}>Let&apos;s play a game</p>
                         <Button
-                            className={`mb-4 sm:mb-8`}
+                            className={`${isGameInProgress ? `mb-8` : ``}`}
                             onClick={() => {
                                 setIsGameInProgress((isGameInProgress) => !isGameInProgress)
                                 setTimeout(() => {

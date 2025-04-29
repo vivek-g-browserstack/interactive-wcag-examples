@@ -8,7 +8,7 @@ export function HoverableCardBroken({ interactionMethod }: { interactionMethod: 
                 alt=""
                 className="absolute top-0 left-0 group-hover:scale-125 group-hover:opacity-50 transition-all duration-300"
             />
-            <h4 className="text-xl z-10 mb-4 group-hover:hidden">
+            <h4 className="text-xl z-10 mb-4 group-hover:hidden animate__animated animate__fadeIn">
                 {interactionMethod === "mouse" && `Hover me?`}
                 {interactionMethod === "keyboard" && `Focus me with keyboard? (spoiler, you cannot)`}
             </h4>

@@ -11,7 +11,7 @@ export function HoverableCardFixed({ interactionMethod }: { interactionMethod: "
                 alt=""
                 className="absolute top-0 left-0 group-hover:opacity-50 group-focus-within:opacity-50 group-hover:scale-125 group-focus-within:scale-125 transition-all duration-300"
             />
-            <h4 id="hover-card-title" className="text-xl z-10 mb-4 group-hover:hidden group-focus-within:hidden">
+            <h4 id="hover-card-title" className="text-xl z-10 mb-4 group-hover:hidden group-focus-within:hidden animate__animated animate__fadeIn">
                 {interactionMethod === "mouse" && `Hover me?`}
                 {interactionMethod === "keyboard" && `Focus me with keyboard?`}
             </h4>

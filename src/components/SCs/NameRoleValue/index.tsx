@@ -55,7 +55,7 @@ export function NameRoleValue() {
                             {isFixed
                                 ?
                                 // <HoverableCardFixed interactionMethod="screen-reader" />
-                                <div className="p-8 border border-slate-700">
+                                <div className="min-h-64 p-8 border border-slate-700">
                                     <p className={`${spaceMono.className}`}>
                                         <b>Focus me with keyboard?</b>
                                     </p>
