@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Switch } from "./ui/switch"
 import { useReflowStore } from "@/store/reflowStore"
 import { Button } from "./ui/button"
@@ -15,12 +15,39 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed, unaffectedByResponsiveness }: SectionHeadingProps) {
     const { isResponsive } = useReflowStore()
+    const [keyPressed, setKeyPressed] = useState<string | null>(null)
 
     useEffect(() => {
         if (!unaffectedByResponsiveness) {
             setIsFixed(isResponsive)
         }
     }, [isResponsive])
+
+
+    useEffect(() => {
+        if (id === "focus-visible") {
+            document.querySelector(`#${id}`)?.addEventListener("keydown", handleKeyPress as (event: Event) => void)
+            return () => {
+                document.querySelector(`#${id}`)?.removeEventListener("keydown", handleKeyPress as (event: Event) => void)
+            }
+        }
+    }, [])
+
+    const handleKeyPress = (event: KeyboardEvent) => {
+        setKeyPressed(event.key === " " ? "Space" : event.key)
+    }
+
+
+    useEffect(() => {
+        let timeout: NodeJS.Timeout
+        if (keyPressed) {
+            timeout = setTimeout(() => setKeyPressed(null), 1500)
+        }
+        return () => {
+            clearTimeout(timeout)
+        }
+    }, [keyPressed])
+
 
     return (
         <div className={`md:sticky md:top-0 md:z-20 bg-neutral-stronger rounded-t-lg flex ${isResponsive ? `flex-wrap` : ``} px-6 py-4 mb-6 gap-8 justify-between items-center shadow`}>
@@ -45,7 +72,6 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                     <h2 className={`font-bold text-2xl`}>
                         Examples of {title}
                     </h2>
-
                 </div>
                 <a
                     href={href}
@@ -60,7 +86,11 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                     <span className="hidden group-hover:block group-focus:block">Detailed explanation</span>
                 </a>
             </div>
+
             <div className={`flex gap-2 items-center`}>
+                {id === "focus-visible" && keyPressed && (
+                    <kbd className="bg-neutral-default px-2 py-1 mr-2">{keyPressed}</kbd>
+                )}
                 <label htmlFor={toggleId}>Make {unaffectedByResponsiveness ? 'this page' : 'examples'} compliant</label>
                 <Switch
                     aria-label={`Toggle compliance of ${title}`}
