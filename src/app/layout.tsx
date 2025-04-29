@@ -10,8 +10,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "WCAG hands on",
-  description: "A playground to learn WCAG success criteria with hands on examples",
+  title: "WCAG examples gallery",
+  description: "A playground to learn WCAG success criteria with interactive examples",
 }
 
 export default function RootLayout({
