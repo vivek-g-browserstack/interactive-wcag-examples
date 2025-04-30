@@ -12,7 +12,7 @@ export function ButtonFixed() {
                         <Button
                             className="block"
                         >
-                            New project
+                            Create new item
                         </Button>
                         <Button
                             variant="outline"

@@ -12,7 +12,7 @@ export function ButtonBroken() {
                         <Button
                             className="block overflow-hidden"
                         >
-                            New project
+                            Create new item
                         </Button>
                         <Button
                             variant="outline"

@@ -13,7 +13,7 @@ import { useEffect } from "react"
 
 export default function Home() {
   useScrollToAnchorHash()
-  const setIsResponsive = useReflowStore((state) => state.setIsResponsive);
+  const setIsResponsive = useReflowStore((state) => state.setIsResponsive)
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
@@ -31,11 +31,26 @@ export default function Home() {
       >
         <span className="flex gap-4 items-center">
           WCAG examples gallery
-          <span
-            className="material-symbols-outlined text-neutral-strong text-4xl"
-            style={{ fontSize: "2.5rem" }}>
-            person_celebrate
-          </span>
+          <Button
+            variant="ghost"
+            aria-label="Copy compliant link to this page"
+            title="Copy compliant link to this page"
+            onClick={() => {
+              const url = new URL(location.href)
+              url.searchParams.set('compliant', 'true')
+              const link = url.toString()
+              window.location.href = link
+              navigator.clipboard.writeText(link)
+              alert("You found the easter egg! Page link with compliant examples, copied to clipboard!")
+            }}
+          >
+            <span
+              className="material-symbols-outlined"
+              style={{ fontSize: "2.5rem" }}
+            >
+              person_celebrate
+            </span>
+          </Button>
         </span>
         <Button
           variant="ghost"
