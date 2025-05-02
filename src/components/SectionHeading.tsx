@@ -60,9 +60,10 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                         title="Copy link to this section"
                         onClick={() => {
                             const link = location.href.replace(location.hash, "") + `#${id}`
-                            window.location.href = link
                             navigator.clipboard.writeText(link)
                             alert("Link copied to clipboard")
+
+                            window.location.href = link
                         }}
                     >
                         <span className="text-sm material-symbols-outlined text-brand-default">

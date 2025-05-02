@@ -39,9 +39,10 @@ export default function Home() {
               const url = new URL(location.href)
               url.searchParams.set('compliant', 'true')
               const link = url.toString()
-              window.location.href = link
               navigator.clipboard.writeText(link)
               alert("You found the easter egg! Page link with compliant examples, copied to clipboard!")
+
+              window.location.href = link
             }}
           >
             <span
