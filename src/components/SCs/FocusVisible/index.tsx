@@ -30,6 +30,12 @@ export function FocusVisible() {
         return () => document.removeEventListener("mousedown", handleClick)
     }, [])
 
+    useEffect(() => {
+        if (isButtonClicked) {
+            alert("Boo! You pressed the decoy button! Make example compliant to see how to toggle the switch.")
+        }
+    }, [isButtonClicked])
+
     return (
         <section id={id}>
             <SectionHeading
@@ -61,8 +67,8 @@ export function FocusVisible() {
                         >
                             {isGameInProgress ? `End game` : `Start game`}
                         </Button>
-                        {isGameInProgress &&
-                            <p><b>Moral of the story:</b> Do not remove focus indicators on elements. Modify, but do not remove fully.</p>
+                        {(isGameInProgress && isFixed) &&
+                            < p > <b>Moral of the story:</b> Do not remove focus indicators on elements. Modify, but do not remove fully.</p>
                         }
                     </div>
                     {isGameInProgress &&
@@ -76,11 +82,11 @@ export function FocusVisible() {
                             }}
                         >
                             <ExampleCard isFixed={isFixed}>
-                                <h3 className={`font-medium text-xl mb-2`}>Can you toggle the &quot;switch&quot; element, with your keyboard?</h3>
+                                <h3 className={`font-medium text-xl mb-2`}>Can you toggle &quot;dark mode&quot;, using only your keyboard?</h3>
                                 <p className={`mb-2 sm:mb-4`}>Use Tab and Shift+Tab to move focus, Space to toggle</p>
                                 <div className="flex flex-wrap p-2 sm:p-4 bg-neutral-default border border-neutral-strong rounded">
                                     <div className={`order-1 ${isResponsive ? 'basis-full sm:basis-1/2' : 'basis-1/2'} flex items-center justify-center p-4`}>
-                                        <a href={`#${id}`}>A hyper link</a>
+                                        <a href={`#${id}`} className="underline underline-offset-4 text-brand-default">A hyper link</a>
                                     </div>
                                     <div className={`order-3 ${isResponsive ? 'basis-full sm:basis-1/2' : 'basis-1/2'} flex items-center justify-center p-4`}>
                                         <Button
@@ -88,12 +94,20 @@ export function FocusVisible() {
                                             onClick={() => setIsButtonClicked(true)}
                                             onBlur={() => setIsButtonClicked(false)}
                                         >
-                                            {isButtonClicked ? "Boo!!" : "Don't focus me"}
+                                            {isButtonClicked ? "Boo!" : "A decoy button"}
                                         </Button>
                                     </div>
                                     <div className={`order-2 ${isResponsive ? 'basis-full sm:basis-1/2' : 'basis-1/2'} flex gap-2 items-center justify-center p-4`}>
-                                        <Switch aria-label="Toggle me" id="switch-to-focus" className={`${isFixed ? `` : `remove-focus`}`}></Switch>
-                                        <label htmlFor="switch-to-focus">Focus me</label>
+                                        <Switch
+                                            aria-label="Toggle me"
+                                            id="switch-to-focus"
+                                            className={`${isFixed ? `` : `remove-focus`}`}
+                                            onClick={() => {
+                                                document.querySelector("html")?.classList.toggle("dark")
+                                            }}
+                                        >
+                                        </Switch>
+                                        <label htmlFor="switch-to-focus">Toggle dark mode</label>
                                     </div>
                                     <div className={`order-4 ${isResponsive ? 'basis-full sm:basis-1/2' : 'basis-1/2'} flex items-center justify-center p-4`}>
                                         <Input

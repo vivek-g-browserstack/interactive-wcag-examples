@@ -40,7 +40,7 @@ export default function Home() {
               url.searchParams.set('compliant', 'true')
               const link = url.toString()
               navigator.clipboard.writeText(link)
-              alert("You found the easter egg! Page link with compliant examples, copied to clipboard!")
+              alert("You found the easter egg! Direct link with compliance ON for all examples, copied to clipboard!")
 
               window.location.href = link
             }}
