@@ -32,7 +32,7 @@ export function FocusVisible() {
 
     useEffect(() => {
         if (isButtonClicked) {
-            alert("Boo! You pressed the decoy button! Make example compliant to see how to toggle the switch.")
+            alert(`Boo! You pressed the decoy button! Switch on "Make examples compliant" for the cheat code.`)
         }
     }, [isButtonClicked])
 

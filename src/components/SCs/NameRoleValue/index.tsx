@@ -6,6 +6,7 @@ import { HoverableCardFixed } from "./fixed/HoverableCardFixed"
 import { useReflowStore } from "@/store/reflowStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
+import { Speech } from "@/components/Speech"
 
 const spaceMono = Space_Mono({
     subsets: ["latin"],
@@ -15,6 +16,7 @@ const spaceMono = Space_Mono({
 
 export function NameRoleValue() {
     const [isFixed, setIsFixed] = useState(false)
+    const [isSpeechSupported, setIsSpeechSupported] = useState(true)
     const { isResponsive } = useReflowStore()
     const id = "name-role-value"
 
@@ -54,19 +56,31 @@ export function NameRoleValue() {
                             <h3 className={`font-medium text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}> How screen reader users experience it</h3>
                             {isFixed
                                 ?
-                                // <HoverableCardFixed interactionMethod="screen-reader" />
                                 <div className="min-h-64 p-8 border border-slate-700">
-                                    <p className={`${spaceMono.className}`}>
-                                        <b>Focus me with keyboard?</b>
-                                    </p>
-                                    <p className={`${spaceMono.className}`}>
-                                        This text is shown only on hover—often inaccessible to keyboard users and screen reader users. This is a common pattern in web design, but it can create accessibility issues for users who rely on keyboard navigation or screen readers.
-                                    </p>
+                                    {isSpeechSupported
+                                        ?
+                                        <Speech text={`Focus me with keyboard? 
+                                        This text is shown only on hover—often inaccessible to keyboard users and screen reader users. This is a common pattern in web design, but it can create accessibility issues for users who rely on keyboard navigation or screen readers.`} className="mt-4" setIsSupported={setIsSpeechSupported} />
+                                        :
+                                        <>
+                                            <p className={`${spaceMono.className}`}>
+                                                <b>Focus me with keyboard?</b>
+                                            </p>
+                                            <p className={`${spaceMono.className}`}>
+                                                This text is shown only on hover—often inaccessible to keyboard users and screen reader users. This is a common pattern in web design, but it can create accessibility issues for users who rely on keyboard navigation or screen readers.
+                                            </p>
+                                        </>
+                                    }
                                 </div>
                                 : <div className="min-h-64 p-8 border border-slate-700">
-                                    <p className={`${spaceMono.className}`}>
-                                        Focus me with keyboard?
-                                    </p>
+                                    {isSpeechSupported
+                                        ?
+                                        <Speech text={`Focus me with keyboard?`} className="mt-4" setIsSupported={setIsSpeechSupported} />
+                                        :
+                                        <p className={`${spaceMono.className}`}>
+                                            Focus me with keyboard?
+                                        </p>
+                                    }
                                 </div>
                             }
                         </div>
