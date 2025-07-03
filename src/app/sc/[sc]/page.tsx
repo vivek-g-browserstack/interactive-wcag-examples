@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useEffect } from "react"
 import { scList } from "@/lib/scList"
 import { Reflow } from "@/components/SCs/Reflow"
 import { TextSpacing } from "@/components/SCs/TextSpacing"
@@ -8,6 +8,8 @@ import { ContentOnFocusOrHover } from "@/components/SCs/ContentOnHoverOrFocus"
 import { FocusVisible } from "@/components/SCs/FocusVisible"
 import { NameRoleValue } from "@/components/SCs/NameRoleValue"
 import Section from "@/components/Section"
+import { useReflowStore } from "@/store/reflowStore"
+import { useScrollToAnchorHash } from "@/hooks/useScrolltoAnchorHash"
 
 const components: Record<string, React.FC> = {
     Reflow,
@@ -18,14 +20,36 @@ const components: Record<string, React.FC> = {
 }
 
 export default function SCPage({ params }: { params: Promise<{ sc: string }> }) {
+    useScrollToAnchorHash()
+    const { setIsResponsive, setIsEmbedded } = useReflowStore()
+
     const { sc } = React.use(params)
     const index = scList.findIndex((item) => item.slug === sc)
-    if (index === -1) return <div>SC not found</div>
     const scMeta = scList[index]
     const SCComponent = components[scMeta.importName]
 
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        const isCompliant = urlParams.get("compliant") === "true"
+        if (isCompliant) {
+            setIsResponsive(true)
+        }
+    }, [])
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        const isEmbedded = urlParams.get("embedded") === "true"
+        if (isEmbedded) {
+            setIsEmbedded(true)
+        }
+    }, [])
+
+    if (index === -1) {
+        return <div>SC not found</div>
+    }
+
     return (
-        <main id="main-content" className="px-4 md:px-6 lg:px-8 py-8 max-w-[1600px] mx-auto">
+        <main id="main-content" className="px-4 md:px-6 lg:px-8 max-w-[1600px] mx-auto">
             <Section>
                 <SCComponent />
             </Section>

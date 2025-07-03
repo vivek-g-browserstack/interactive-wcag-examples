@@ -7,9 +7,9 @@ export function HoverableCardFixed({ interactionMethod }: { interactionMethod: "
             aria-describedby={`hover-card-description-${randomNumber}`}
         >
             <img
-                src="https://png.pngtree.com/background/20210717/original/pngtree-simple-geometric-background-4-picture-image_1437847.jpg"
+                src="/wcag-hands-on/geometric-spiral-blue.png"
                 alt=""
-                className="absolute top-0 left-0 group-hover:opacity-50 group-focus-within:opacity-50 group-hover:scale-125 group-focus-within:scale-125 transition-all duration-300"
+                className="absolute -top-[20%] left-0 opacity-75 scale-125 group-hover:scale-150 group-focus-within:scale-150 group-hover:opacity-50 group-focus-within:opacity-50 transition-all duration-300"
             />
             <h4 id="hover-card-title" className="text-xl z-10 mb-4 group-hover:hidden group-focus-within:hidden animate__animated animate__fadeIn">
                 {interactionMethod === "mouse" && `Hover me?`}

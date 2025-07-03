@@ -1,6 +1,10 @@
+import { useReflowStore } from "@/store/reflowStore"
+
 export default function SectionContent({ children }: { children: React.ReactNode }) {
+    const { isEmbedded } = useReflowStore()
+
     return (
-        <div className="px-6 mb-6">
+        <div className={`${isEmbedded ? `px-10 mb-10` : `px-6 mb-6`}`}>
             {children}
         </div>
     )
