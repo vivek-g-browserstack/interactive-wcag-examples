@@ -29,4 +29,11 @@ export const scList = [
         importName: "NameRoleValue",
         id: "name-role-value"
     }
-] 
+]
+
+export type ScMeta = {
+    slug: string
+    title: string
+    importName: string
+    id: string
+} 
