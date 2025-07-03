@@ -3,7 +3,7 @@ import { Switch } from "../../ui/switch"
 import { Button } from "../../ui/button"
 import { Input } from "../../ui/input"
 import { SectionHeading } from "@/components/SectionHeading"
-import { useReflowStore } from "@/store/reflowStore"
+import { useReflowStore } from "@/store/globalStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
 

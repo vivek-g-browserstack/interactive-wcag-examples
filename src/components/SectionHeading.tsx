@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Switch } from "./ui/switch"
-import { useReflowStore } from "@/store/reflowStore"
+import { useReflowStore } from "@/store/globalStore"
 import { Button } from "./ui/button"
 
 type SectionHeadingProps = {
@@ -10,18 +10,23 @@ type SectionHeadingProps = {
     toggleId: string,
     isFixed: boolean,
     setIsFixed: (state: boolean) => void,
-    unaffectedByResponsiveness?: boolean,
+    isMasterSwitch?: boolean,
 }
 
-export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed, unaffectedByResponsiveness }: SectionHeadingProps) {
-    const { isResponsive, isEmbedded } = useReflowStore()
+export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed, isMasterSwitch }: SectionHeadingProps) {
+    const { isResponsive, isCompliant, isEmbedded, setIsResponsive, setIsCompliant } = useReflowStore()
     const [keyPressed, setKeyPressed] = useState<string | null>(null)
 
     useEffect(() => {
-        if (!unaffectedByResponsiveness) {
-            setIsFixed(isResponsive)
+        setIsFixed(isCompliant)
+    }, [isCompliant])
+
+    useEffect(() => {
+        if (isMasterSwitch) {
+            setIsCompliant(isFixed)
+            setIsResponsive(isFixed)
         }
-    }, [isResponsive])
+    }, [isFixed])
 
 
     useEffect(() => {
@@ -94,7 +99,7 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                 {id === "focus-visible" && keyPressed && (
                     <kbd className="bg-neutral-default px-2 py-1 mr-2">{keyPressed}</kbd>
                 )}
-                <label htmlFor={toggleId}>Make {unaffectedByResponsiveness ? 'this page' : 'examples'} compliant</label>
+                <label htmlFor={toggleId}>Make {isMasterSwitch ? 'this page' : 'examples'} compliant</label>
                 <Switch
                     aria-label={`Toggle compliance of ${title}`}
                     checked={isFixed}

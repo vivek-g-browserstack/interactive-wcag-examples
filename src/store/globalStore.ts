@@ -3,13 +3,17 @@ import { create } from 'zustand'
 interface ReflowState {
   isResponsive: boolean
   setIsResponsive: (state: boolean) => void
+  isCompliant: boolean
+  setIsCompliant: (state: boolean) => void
   isEmbedded: boolean
   setIsEmbedded: (state: boolean) => void
 }
 
 export const useReflowStore = create<ReflowState>()((set) => ({
-  isResponsive: false,
+  isResponsive: true,
   setIsResponsive: (state: boolean) => set({ isResponsive: state }),
+  isCompliant: false,
+  setIsCompliant: (state: boolean) => set({ isCompliant: state }),
   isEmbedded: false,
   setIsEmbedded: (state: boolean) => set({ isEmbedded: state })
 })) 

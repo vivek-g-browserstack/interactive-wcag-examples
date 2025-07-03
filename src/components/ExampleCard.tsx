@@ -1,4 +1,4 @@
-import { useReflowStore } from "@/store/reflowStore"
+import { useReflowStore } from "@/store/globalStore"
 
 export default function ExampleCard({ isFixed, children }: { isFixed: boolean, children: React.ReactNode }) {
     const { isEmbedded } = useReflowStore()

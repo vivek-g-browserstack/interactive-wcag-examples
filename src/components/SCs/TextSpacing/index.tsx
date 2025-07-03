@@ -13,7 +13,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { SectionHeading } from "@/components/SectionHeading"
-import { useReflowStore } from "@/store/reflowStore"
+import { useReflowStore } from "@/store/globalStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
 

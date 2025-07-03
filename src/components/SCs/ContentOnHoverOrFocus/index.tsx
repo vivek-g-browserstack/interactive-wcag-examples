@@ -6,7 +6,7 @@ import { HoverableFixed } from "./fixed/Hoverable"
 import { PersistentFixed } from "./fixed/Persistent"
 import { DismissibleFixed } from "./fixed/Dismissible"
 import { SectionHeading } from "@/components/SectionHeading"
-import { useReflowStore } from "@/store/reflowStore"
+import { useReflowStore } from "@/store/globalStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
 
