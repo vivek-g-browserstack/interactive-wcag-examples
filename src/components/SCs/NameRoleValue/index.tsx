@@ -59,8 +59,11 @@ export function NameRoleValue() {
                                 <div className={`min-h-64 p-8 ${isSpeechSupported ? `flex justify-center items-center` : ``} border border-slate-700`}>
                                     {isSpeechSupported
                                         ?
-                                        <Speech text={`Focus me with keyboard? 
-                                        This text is shown only on hover—often inaccessible to keyboard users and screen reader users. This is a common pattern in web design, but it can create accessibility issues for users who rely on keyboard navigation or screen readers.`} className="mt-4" setIsSupported={setIsSpeechSupported} />
+                                        <Speech
+                                            text={`Focus me with keyboard? 
+                                        This text is shown only on hover—often inaccessible to keyboard users and screen reader users. This is a common pattern in web design, but it can create accessibility issues for users who rely on keyboard navigation or screen readers.`}
+                                            className="mt-4"
+                                            setIsSupported={setIsSpeechSupported} />
                                         :
                                         <>
                                             <p className={`${spaceMono.className}`}>
@@ -75,7 +78,10 @@ export function NameRoleValue() {
                                 : <div className={`min-h-64 p-8 ${isSpeechSupported ? `flex justify-center items-center` : ``} border border-slate-700`}>
                                     {isSpeechSupported
                                         ?
-                                        <Speech text={`Focus me with keyboard?`} className="mt-4" setIsSupported={setIsSpeechSupported} />
+                                        <Speech
+                                            text={`Focus me with keyboard?`}
+                                            className="mt-4"
+                                            setIsSupported={setIsSpeechSupported} />
                                         :
                                         <p className={`${spaceMono.className}`}>
                                             Focus me with keyboard?
