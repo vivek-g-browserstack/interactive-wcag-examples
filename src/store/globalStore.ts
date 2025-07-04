@@ -9,7 +9,7 @@ interface ReflowState {
   setIsEmbedded: (state: boolean) => void
 }
 
-export const useReflowStore = create<ReflowState>()((set) => ({
+export const useGlobalStore = create<ReflowState>()((set) => ({
   isResponsive: true,
   setIsResponsive: (state: boolean) => set({ isResponsive: state }),
   isCompliant: false,

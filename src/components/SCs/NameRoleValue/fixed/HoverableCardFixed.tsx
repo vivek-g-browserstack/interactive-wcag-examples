@@ -1,3 +1,5 @@
+import Image from "@/components/ui/Image"
+
 export function HoverableCardFixed({ interactionMethod }: { interactionMethod: "mouse" | "keyboard" }) {
     const randomNumber = Math.floor((Math.random() * 1000))
     return (
@@ -6,8 +8,8 @@ export function HoverableCardFixed({ interactionMethod }: { interactionMethod: "
             aria-label={interactionMethod === "mouse" ? `Hover me?` : `Focus me with keyboard?`}
             aria-describedby={`hover-card-description-${randomNumber}`}
         >
-            <img
-                src="/wcag-hands-on/geometric-spiral-blue.png"
+            <Image
+                src="geometric-spiral-blue.png"
                 alt=""
                 className="absolute -top-[20%] left-0 opacity-75 scale-125 group-hover:scale-150 group-focus-within:scale-150 group-hover:opacity-50 group-focus-within:opacity-50 transition-all duration-300"
             />

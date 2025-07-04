@@ -13,13 +13,13 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { SectionHeading } from "@/components/SectionHeading"
-import { useReflowStore } from "@/store/globalStore"
+import { useGlobalStore } from "@/store/globalStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
 
 export function TextSpacing() {
     const [isFixed, setIsFixed] = useState(false)
-    const { isResponsive } = useReflowStore()
+    const { isResponsive } = useGlobalStore()
     const id = "text-spacing"
     // const [applyWCAGValues, setApplyWCAGValues] = useState(true)
 

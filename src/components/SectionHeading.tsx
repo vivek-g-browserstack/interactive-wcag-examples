@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Switch } from "./ui/switch"
-import { useReflowStore } from "@/store/globalStore"
+import { useGlobalStore } from "@/store/globalStore"
 import { Button } from "./ui/button"
 
 type SectionHeadingProps = {
@@ -14,7 +14,7 @@ type SectionHeadingProps = {
 }
 
 export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed, isMasterSwitch }: SectionHeadingProps) {
-    const { isResponsive, isCompliant, isEmbedded, setIsResponsive, setIsCompliant } = useReflowStore()
+    const { isResponsive, isCompliant, isEmbedded, setIsResponsive, setIsCompliant } = useGlobalStore()
     const [keyPressed, setKeyPressed] = useState<string | null>(null)
 
     useEffect(() => {
@@ -55,8 +55,8 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
 
 
     return (
-        <div className={`md:sticky md:top-0 md:z-20 bg-neutral-stronger rounded-t-lg flex ${isResponsive ? `flex-wrap` : ``} px-6 py-4 gap-8 ${isEmbedded ? `justify-center mb-8` : `justify-between mb-6`} items-center shadow`}>
-            {!isEmbedded &&
+        <div className={`md:sticky md:top-0 md:z-20 flex ${isResponsive ? `flex-wrap` : ``} gap-8 mb-6 ${isEmbedded ? `justify-between` : `px-6 py-4 justify-between bg-neutral-stronger rounded-t-lg shadow`} items-center`}>
+            {!isEmbedded ?
                 <div className={`flex ${isResponsive ? `flex-wrap` : ``} gap-2 items-center`}>
                     <div className="flex items-center">
                         <Button
@@ -93,6 +93,8 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                         <span className="hidden group-hover:block group-focus:block">Detailed explanation</span>
                     </a>
                 </div>
+                :
+                <h2 className="font-semibold text-lg">Interactive examples</h2>
             }
 
             <div className={`flex gap-2 items-center`}>

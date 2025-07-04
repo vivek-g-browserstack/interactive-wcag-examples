@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading"
 import { HoverableCardBroken } from "./broken/HoverableCardBroken"
 import { Space_Mono } from "next/font/google"
 import { HoverableCardFixed } from "./fixed/HoverableCardFixed"
-import { useReflowStore } from "@/store/globalStore"
+import { useGlobalStore } from "@/store/globalStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
 import { Speech } from "@/components/Speech"
@@ -17,7 +17,7 @@ const spaceMono = Space_Mono({
 export function NameRoleValue() {
     const [isFixed, setIsFixed] = useState(false)
     const [isSpeechSupported, setIsSpeechSupported] = useState(true)
-    const { isResponsive } = useReflowStore()
+    const { isResponsive } = useGlobalStore()
     const id = "name-role-value"
 
     return (

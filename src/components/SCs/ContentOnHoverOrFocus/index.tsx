@@ -6,13 +6,13 @@ import { HoverableFixed } from "./fixed/Hoverable"
 import { PersistentFixed } from "./fixed/Persistent"
 import { DismissibleFixed } from "./fixed/Dismissible"
 import { SectionHeading } from "@/components/SectionHeading"
-import { useReflowStore } from "@/store/globalStore"
+import { useGlobalStore } from "@/store/globalStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
 
 export function ContentOnFocusOrHover() {
     const [isFixed, setIsFixed] = useState(false)
-    const { isResponsive } = useReflowStore()
+    const { isResponsive } = useGlobalStore()
     const id = "content-on-hover-or-focus"
 
     return (

@@ -1,8 +1,8 @@
 import { useEffect } from "react"
-import { useReflowStore } from "@/store/globalStore"
+import { useGlobalStore } from "@/store/globalStore"
 
 export function useUrlParamsToStore() {
-    const { setIsResponsive, setIsCompliant, setIsEmbedded } = useReflowStore()
+    const { setIsResponsive, setIsCompliant, setIsEmbedded } = useGlobalStore()
 
     useEffect(() => {
         if (typeof window === "undefined") return

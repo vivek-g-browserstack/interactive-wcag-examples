@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  env: {
+    // Sample LINK prefix: /listen
+    // Do not add the slash at the last
+    LINK_PREFIX: process.env.NODE_ENV === "production" ? "/wcag-hands-on" : ""
+  },
+}
 
-export default nextConfig;
+export default nextConfig

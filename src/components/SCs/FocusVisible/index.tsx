@@ -3,7 +3,7 @@ import { Switch } from "../../ui/switch"
 import { Button } from "../../ui/button"
 import { Input } from "../../ui/input"
 import { SectionHeading } from "@/components/SectionHeading"
-import { useReflowStore } from "@/store/globalStore"
+import { useGlobalStore } from "@/store/globalStore"
 import SectionContent from "@/components/SectionContent"
 import ExampleCard from "@/components/ExampleCard"
 
@@ -12,7 +12,7 @@ export function FocusVisible() {
     const [isGameInProgress, setIsGameInProgress] = useState(false)
     const [isButtonClicked, setIsButtonClicked] = useState(false)
     const gameRef = useRef<HTMLDivElement>(null)
-    const { isResponsive } = useReflowStore()
+    const { isResponsive } = useGlobalStore()
     const id = "focus-visible"
 
     function handleClick(e: MouseEvent) {
