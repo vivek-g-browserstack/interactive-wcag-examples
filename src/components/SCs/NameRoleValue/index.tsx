@@ -37,7 +37,7 @@ export function NameRoleValue() {
                         <span className="material-symbols-outlined">deployed_code</span>
                         &nbsp;{isFixed ? `An accessible hover interaction` : `An inaccessible hover interaction`}
                     </h2>
-                    <div className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-4`}>
+                    <div className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-8 md:gap-4`}>
                         <div className="flex flex-col justify-between">
                             <h3 className={`font-medium text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}>How mouse users experience it</h3>
                             {isFixed

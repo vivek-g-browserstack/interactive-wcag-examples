@@ -55,7 +55,7 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
 
 
     return (
-        <div className={`md:sticky md:top-0 md:z-20 flex ${isResponsive ? `flex-wrap` : ``} gap-8 mb-6 ${isEmbedded ? `justify-between` : `px-6 py-4 justify-between bg-neutral-stronger rounded-t-lg shadow`} items-center`}>
+        <div className={`md:sticky md:top-0 md:z-20 flex ${isResponsive ? `flex-wrap` : ``} gap-8 ${isEmbedded ? `mb-4 justify-between` : `px-6 py-4 mb-6 justify-between bg-neutral-stronger rounded-t-lg shadow`} items-center`}>
             {!isEmbedded ?
                 <div className={`flex ${isResponsive ? `flex-wrap` : ``} gap-2 items-center`}>
                     <div className="flex items-center">
