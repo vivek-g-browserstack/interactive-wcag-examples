@@ -55,7 +55,7 @@ const invoices = [
 
 export function TableFixed() {
     return (
-        <Table className="table-fixed break-words">
+        <Table className="table-fixed break-words max-w-[360px]">
             <TableHeader>
                 <TableRow>
                     <TableHead>Invoice</TableHead>

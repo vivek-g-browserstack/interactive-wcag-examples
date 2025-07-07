@@ -60,19 +60,16 @@ export function FocusVisible() {
                             className={`${isGameInProgress ? `mb-8` : ``}`}
                             onClick={() => {
                                 setIsGameInProgress((isGameInProgress) => !isGameInProgress)
-                                setTimeout(() => {
-                                    document.querySelector(`#${id}`)?.scrollIntoView()
-                                }, 100)
                             }}
                         >
-                            {isGameInProgress ? `End game` : `Start game`}
+                            {isGameInProgress ? `Stop game` : `Start game`}
                         </Button>
                         {(isGameInProgress && isFixed) &&
                             < p > <b>Moral of the story:</b> Do not remove focus indicators on elements. Modify, but do not remove fully.</p>
                         }
                     </div>
-                    {isGameInProgress &&
-                        <div
+                    {isGameInProgress
+                        ? <div
                             ref={gameRef}
                             className={`relative ${isResponsive ? 'md:col-span-2' : 'col-span-2'} `}
                             onKeyDown={(e) => {
@@ -118,7 +115,13 @@ export function FocusVisible() {
                                     </div>
                                 </div>
                             </ExampleCard>
-                        </div>}
+                        </div>
+                        : <div
+                            className={`relative h-[268px] bg-brand-weakest border border-brand-default flex justify-center items-center rounded-lg ${isResponsive ? 'md:col-span-2' : 'col-span-2'} `}
+                        >
+                            <p className="text-lg font-medium">Click start to begin the game!</p>
+                        </div>
+                    }
                 </div >
             </SectionContent >
         </section >
