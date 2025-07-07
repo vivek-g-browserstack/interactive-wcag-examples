@@ -55,18 +55,19 @@ export function FocusVisible() {
                             }
                 `}</style>
                     <div className={`${isResponsive ? 'md:col-span-1' : ''}`}>
-                        <p className={`mb-2`}>Let&apos;s play a game</p>
-                        <Button
-                            className={`${isGameInProgress ? `mb-8` : ``}`}
-                            onClick={() => {
-                                setIsGameInProgress((isGameInProgress) => !isGameInProgress)
-                            }}
-                        >
-                            {isGameInProgress ? `Stop game` : `Start game`}
-                        </Button>
-                        {(isGameInProgress && isFixed) &&
-                            < p > <b>Moral of the story:</b> Do not remove focus indicators on elements. Modify, but do not remove fully.</p>
-                        }
+                        <div className="flex gap-4 items-center md:block">
+                            <p className="md:mb-4">This example is a game!</p>
+                            {isGameInProgress &&
+                                <Button
+                                    variant="destructive"
+                                    onClick={() => {
+                                        setIsGameInProgress((isGameInProgress) => !isGameInProgress)
+                                    }}
+                                >
+                                    {isGameInProgress ? `Stop game` : `Start game`}
+                                </Button>}
+                        </div>
+                        <p className="mt-4 text-neutral-weaker">Do not remove focus indicators on elements. Modify, but do not remove fully.</p>
                     </div>
                     {isGameInProgress
                         ? <div
@@ -117,9 +118,18 @@ export function FocusVisible() {
                             </ExampleCard>
                         </div>
                         : <div
-                            className={`relative h-[268px] bg-brand-weakest border border-brand-default flex justify-center items-center rounded-lg ${isResponsive ? 'md:col-span-2' : 'col-span-2'} `}
+                            className={`relative h-[268px] bg-brand-weakest border border-brand-default p-8 flex justify-center items-center rounded-lg ${isResponsive ? 'md:col-span-2' : 'col-span-2'} `}
                         >
-                            <p className="text-lg font-medium">Click start to begin the game!</p>
+                            <div className="w-full text-center">
+                                <p className="text-lg font-medium mb-4">Click start to begin the game!</p>
+                                <Button
+                                    onClick={() => {
+                                        setIsGameInProgress((isGameInProgress) => !isGameInProgress)
+                                    }}
+                                >
+                                    {isGameInProgress ? `Stop game` : `Start game`}
+                                </Button>
+                            </div>
                         </div>
                     }
                 </div >
