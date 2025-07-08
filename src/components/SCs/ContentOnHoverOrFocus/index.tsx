@@ -26,7 +26,7 @@ export function ContentOnFocusOrHover() {
                 setIsFixed={setIsFixed}
             />
             <SectionContent>
-                <div className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-6`}>
+                <div className={`grid ${isResponsive ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-3'} gap-6`}>
                     <ExampleCard isFixed={isFixed}>
                         <h3
                             className={`font-bold font-display italic text-xl flex items-center mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}
