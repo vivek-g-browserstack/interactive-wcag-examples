@@ -56,7 +56,12 @@ export function NameRoleValue() {
                             <h3 className={`font-medium text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}> How screen reader users experience it</h3>
                             {isFixed
                                 ?
-                                <div className={`min-h-64 p-8 ${isSpeechSupported ? `flex justify-center items-center` : ``} border border-slate-700`}>
+                                <div
+                                    className={`min-h-64 p-8 bg-cover bg-no-repeat ${isSpeechSupported ? `flex justify-center items-center` : ``} border border-slate-700`}
+                                    style={{
+                                        backgroundImage: `url('${process.env.NODE_ENV === "production" ? `/wcag-hands-on` : ``}/geometric-spiral-blue.png')`
+                                    }}
+                                >
                                     {isSpeechSupported
                                         ?
                                         <Speech
@@ -75,7 +80,12 @@ export function NameRoleValue() {
                                         </>
                                     }
                                 </div>
-                                : <div className={`min-h-64 p-8 ${isSpeechSupported ? `flex justify-center items-center` : ``} border border-slate-700`}>
+                                : <div
+                                    className={`min-h-64 p-8 bg-cover bg-no-repeat ${isSpeechSupported ? `flex justify-center items-center` : ``} border border-slate-700`}
+                                    style={{
+                                        backgroundImage: `url('${process.env.NODE_ENV === "production" ? `/wcag-hands-on` : ``}/geometric-spiral-blue.png')`
+                                    }}
+                                >
                                     {isSpeechSupported
                                         ?
                                         <Speech

@@ -41,6 +41,7 @@ export function Speech({ text, setIsSupported }: SpeechProps) {
     return (
         <Button
             aria-label={isSpeaking ? "Stop speech" : "Play speech"}
+            variant="outline"
             onClick={handlePlay}
         >
             {isSpeaking
