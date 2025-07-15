@@ -1,10 +1,24 @@
 import { SectionHeading } from "@/components/SectionHeading"
 import SectionContent from "@/components/SectionContent"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function Reflow() {
     const [isFixed, setIsFixed] = useState(false)
+    const [isIframe, setIsIframe] = useState(false)
     const id = "reflow"
+
+    function isInIframe() {
+        try {
+            return window.self !== window.top
+        }
+        catch {
+            return true
+        }
+    }
+
+    useEffect(() => {
+        setIsIframe(isInIframe())
+    }, [])
 
     return (
         <section id={id}>
@@ -19,11 +33,17 @@ export function Reflow() {
             />
             <SectionContent>
                 <h3 className="font-medium text-xl mb-4">
-                    Zoom this page to 400% or set the page width to 320px
+                    Here&apos;s how a page will look at 400% zoom or 320px width
                 </h3>
-                <p className={`text-sm sm:text-base ${isFixed ? `text-success-default` : `text-danger-default`}`}>
+                <p className={`text-sm mb-6 sm:text-base ${isFixed ? `text-success-default` : `text-danger-default`}`}>
                     {isFixed ? "This page does not require scrolling in both horizontal and vertical directions to access content. No content or functionality is hidden or obstructed." : "This page requires scrolling in both horizontal and vertical directions to access content in some sections. Further, some content and functionality is difficult to access."}
                 </p>
+                {!isIframe &&
+                    <iframe
+                        src={`/sc/all?responsive=${isFixed ? `true` : `false`}&compliant=${isFixed ? `true` : `false`}`}
+                        className="w-[320px] h-[360px] rounded-xl shadow-lg box-content border-4 border-neutral-strong"
+                    />
+                }
             </SectionContent>
         </section>
     )

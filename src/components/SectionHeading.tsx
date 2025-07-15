@@ -101,7 +101,7 @@ export function SectionHeading({ title, id, href, toggleId, isFixed, setIsFixed,
                 {id === "focus-visible" && keyPressed && (
                     <kbd className="bg-neutral-default px-2 py-1 mr-2">{keyPressed}</kbd>
                 )}
-                <label htmlFor={toggleId}>Make {isMasterSwitch ? 'this page' : 'examples'} compliant</label>
+                <label htmlFor={toggleId}>Make {isMasterSwitch ? 'examples' : 'examples'} compliant</label>
                 <Switch
                     aria-label={`Toggle compliance of ${title}`}
                     checked={isFixed}
