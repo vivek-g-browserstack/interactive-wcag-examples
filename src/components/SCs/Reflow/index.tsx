@@ -40,7 +40,7 @@ export function Reflow() {
                 </p>
                 {!isIframe &&
                     <iframe
-                        src={`/sc/all?responsive=${isFixed ? `true` : `false`}&compliant=${isFixed ? `true` : `false`}`}
+                        src={`${process.env.NODE_ENV === "production" ? `/wcag-hands-on` : ``}/sc/all?responsive=${isFixed ? `true` : `false`}&compliant=${isFixed ? `true` : `false`}`}
                         className="w-[320px] h-[360px] rounded-xl shadow-lg box-content border-4 border-neutral-strong"
                     />
                 }
