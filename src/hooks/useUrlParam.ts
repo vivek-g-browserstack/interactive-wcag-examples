@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useGlobalStore } from "@/store/globalStore"
 
 export function useUrlParamsToStore() {
-    const { setIsResponsive, setIsCompliant, setIsEmbedded } = useGlobalStore()
+    const { setIsResponsive, setIsCompliant, setIsEmbedded, setIsIframe } = useGlobalStore()
 
     useEffect(() => {
         if (typeof window === "undefined") return
@@ -15,6 +15,9 @@ export function useUrlParamsToStore() {
         }
         if (urlParams.get("embedded") === "true") {
             setIsEmbedded(true)
+        }
+        if (urlParams.get("iframe") === "true") {
+            setIsIframe(true)
         }
     }, [setIsResponsive, setIsEmbedded, typeof window !== "undefined" ? window.location.search : null])
 } 

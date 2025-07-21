@@ -1,24 +1,13 @@
 import { SectionHeading } from "@/components/SectionHeading"
 import SectionContent from "@/components/SectionContent"
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { useGlobalStore } from "@/store/globalStore"
 
 export function Reflow() {
     const [isFixed, setIsFixed] = useState(false)
-    const [isIframe, setIsIframe] = useState(false)
+    const { isIframe } = useGlobalStore()
     const id = "reflow"
 
-    function isInIframe() {
-        try {
-            return window.self !== window.top
-        }
-        catch {
-            return true
-        }
-    }
-
-    useEffect(() => {
-        setIsIframe(isInIframe())
-    }, [])
 
     return (
         <section id={id}>
@@ -40,7 +29,7 @@ export function Reflow() {
                 </p>
                 {!isIframe &&
                     <iframe
-                        src={`${process.env.NODE_ENV === "production" ? `/wcag-hands-on` : ``}/sc/all?responsive=${isFixed ? `true` : `false`}&compliant=${isFixed ? `true` : `false`}`}
+                        src={`${process.env.NODE_ENV === "production" ? `/wcag-hands-on` : ``}/sc/all?responsive=${isFixed ? `true` : `false`}&compliant=${isFixed ? `true` : `false`}&iframe=true`}
                         className="w-[320px] h-[360px] rounded-xl shadow-lg box-content border-4 border-neutral-strong"
                     />
                 }

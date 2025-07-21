@@ -7,6 +7,8 @@ interface ReflowState {
   setIsCompliant: (state: boolean) => void
   isEmbedded: boolean
   setIsEmbedded: (state: boolean) => void
+  isIframe: boolean
+  setIsIframe: (state: boolean) => void
 }
 
 export const useGlobalStore = create<ReflowState>()((set) => ({
@@ -15,5 +17,7 @@ export const useGlobalStore = create<ReflowState>()((set) => ({
   isCompliant: false,
   setIsCompliant: (state: boolean) => set({ isCompliant: state }),
   isEmbedded: false,
-  setIsEmbedded: (state: boolean) => set({ isEmbedded: state })
+  setIsEmbedded: (state: boolean) => set({ isEmbedded: state }),
+  isIframe: false,
+  setIsIframe: (state: boolean) => set({ isIframe: state })
 })) 
