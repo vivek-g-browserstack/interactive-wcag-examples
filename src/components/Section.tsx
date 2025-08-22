@@ -1,10 +1,10 @@
-import { useGlobalStore } from "@/store/globalStore"
+// import { useGlobalStore } from "@/store/globalStore"
 
 export default function Section({ children }: { children: React.ReactNode }) {
-    const { isEmbedded } = useGlobalStore()
+    // const { isEmbedded } = useGlobalStore()
 
     return (
-        <div className={`${isEmbedded ? `mb-2` : `mb-36 bg-neutral-default border border-neutral-strong shadow`}  rounded-lg`}>
+        <div className={`bg-neutral-strong rounded-md p-6`}>
             {children}
         </div>
     )

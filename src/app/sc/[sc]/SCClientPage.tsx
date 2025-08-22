@@ -27,7 +27,7 @@ export default function SCClientPage({ scMeta }: { scMeta: ScMeta }) {
     const { isEmbedded } = useGlobalStore()
 
     return (
-        <main id="main-content" className={`${isEmbedded ? `` : `px-4 md:px-6 lg:px-8`} max-w-[1600px] mx-auto`}>
+        <main id="main-content" className={`${isEmbedded ? `` : ``} mx-auto`}>
             <Section>
                 <SCComponent />
             </Section>

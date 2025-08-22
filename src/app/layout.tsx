@@ -39,7 +39,7 @@ export default function RootLayout({
         `}
       </Script>
       <body
-        className={`${inter.className} antialiased py-4 bg-surface-default text-neutral-default`}
+        className={`${inter.className} antialiased bg-surface-default text-neutral-default`}
       >
         <a
           href="#main-content"

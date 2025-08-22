@@ -1,7 +1,7 @@
 export function HoverableCardBroken({ interactionMethod }: { interactionMethod: "mouse" | "keyboard" }) {
     return (
         <div
-            className={`min-h-64 p-8 bg-black rounded-lg text-white group flex flex-col justify-center overflow-clip bg-cover bg-no-repeat ${interactionMethod === "keyboard" ? `pointer-events-none` : ``}`}
+            className={`min-h-64 h-full p-8 bg-black rounded-lg text-white group flex flex-col justify-center overflow-clip bg-cover bg-no-repeat ${interactionMethod === "keyboard" ? `pointer-events-none` : ``}`}
             style={{
                 backgroundImage: `url('${process.env.NODE_ENV === "production" ? `/wcag-hands-on` : ``}/geometric-spiral-blue.png')`
             }}
@@ -11,7 +11,7 @@ export function HoverableCardBroken({ interactionMethod }: { interactionMethod: 
                 {interactionMethod === "keyboard" && `Focus me with keyboard? (spoiler, you cannot)`}
             </h4>
             <p className="hidden group-hover:block animate__animated animate__fadeIn animate__fast">
-                This text is shown only on hover—often inaccessible to keyboard users and screen reader users. This is a common pattern in web design, but it can create accessibility issues for users who rely on keyboard navigation or screen readers.
+                This text is shown on hover—often inaccessible to keyboard users and screen reader users.
             </p>
         </div>
     )
