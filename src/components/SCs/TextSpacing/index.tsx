@@ -80,7 +80,7 @@ export function TextSpacing() {
 
             <p className={`mb-4 text-neutral-weaker`}>To allow variation in text spacing, avoid fixed widths for buttons, fixed heights for table rows, fixed heights for cards without scroll for overflow. </p>
 
-            <div className={`grid ${isResponsive ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2' : 'grid-cols-3'} gap-6`}>
+            <div className={`grid ${isResponsive ? 'grid-cols-2 md:grid-cols-2 lg:grid-cols-2' : 'grid-cols-3'} gap-6`}>
                 <Render isFixed={false} set={1} />
                 <Render isFixed={true} set={1} />
                 <Render isFixed={false} set={2} />
