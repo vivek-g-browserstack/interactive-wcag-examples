@@ -59,10 +59,10 @@ function Render({ isFixed }: { isFixed: boolean }) {
         <div>
             <div className="flex justify-between mb-2">
                 <h3
-                    className={`font-bold flex items-center text-xl ${isFixed ? `text-success-default` : `text-danger-default`}`}
+                    className={`font-bold flex gap-2 text-xl ${isFixed ? `text-success-default` : `text-danger-default`}`}
                 >
                     <span className="material-symbols-outlined">deployed_code</span>
-                    &nbsp;{isFixed ? `A game that is accessible` : `A game that is not accessible`}
+                    {isFixed ? `A game that is accessible` : `A game that is not accessible`}
                 </h3>
             </div>
             {isGameInProgress

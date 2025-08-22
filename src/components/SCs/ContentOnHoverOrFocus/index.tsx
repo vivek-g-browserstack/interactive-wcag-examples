@@ -33,29 +33,29 @@ function Render({ isFixed, isResponsive }: { isFixed: boolean, isResponsive: boo
         <>
             <ExampleCard>
                 <h3
-                    className={`font-bold text-xl flex items-center mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}
+                    className={`font-bold text-xl flex gap-2 mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}
                 >
                     <span className="material-symbols-outlined">deployed_code</span>
-                    &nbsp;{isFixed ? `Hoverable` : `Non hoverable`} tooltips
+                    {isFixed ? `Hoverable` : `Non hoverable`} tooltips
                 </h3>
                 <p className={`text-slate-500 ${isResponsive ? 'text-sm sm:text-base' : ''} mb-8`}>Once the tooltip appears, move your mouse into the tooltip content and see if the tooltip disappears</p>
                 {isFixed ? <HoverableFixed /> : <HoverableBroken />}
             </ExampleCard>
             <ExampleCard>
                 <h3
-                    className={`font-bold flex items-center text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}>
+                    className={`font-bold flex gap-2 text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}>
                     <span className="material-symbols-outlined">deployed_code</span>
-                    &nbsp;{isFixed ? `Persistent` : `Non persistent`} tooltips
+                    {isFixed ? `Persistent` : `Non persistent`} tooltips
                 </h3>
                 <p className={`text-slate-500 mb-8`}>Once the tooltip appears, see if the tooltip holds as long as you hover(or focus the trigger)</p>
                 {isFixed ? <PersistentFixed /> : <PersistentBroken />}
             </ExampleCard>
             <ExampleCard>
                 <h3
-                    className={`font-bold flex items-center text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}
+                    className={`font-bold flex gap-2 text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}
                 >
                     <span className="material-symbols-outlined">deployed_code</span>
-                    &nbsp;{isFixed ? `Dismissible` : `In-dismissible`} tooltips
+                    {isFixed ? `Dismissible` : `In-dismissible`} tooltips
                 </h3>
                 <p className={`text-slate-500 mb-8`}>Once the tooltip appears, press Esc and check if it can be dismissed</p>
                 {isFixed ? <DismissibleFixed /> : <DismissibleBroken />}

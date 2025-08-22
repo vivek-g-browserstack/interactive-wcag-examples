@@ -97,10 +97,10 @@ function Render({ isFixed, set }: { isFixed: boolean, set: number }) {
             {set === 1 &&
                 <ExampleCard>
                     <h3
-                        className={`font-bold flex items-center text-xl mb-3 sm:mb-4 ${isFixed ? `text-success-default` : `text-danger-default`}`}
+                        className={`font-bold flex gap-2 text-xl mb-3 sm:mb-4 ${isFixed ? `text-success-default` : `text-danger-default`}`}
                     >
                         <span className="material-symbols-outlined">deployed_code</span>
-                        &nbsp;Buttons {isFixed ? `without` : `with`}  fixed widths
+                        Buttons {isFixed ? `without` : `with`}  fixed widths
                     </h3>
                     <div className="text-spacing-sc-values">
                         {isFixed ? <ButtonFixed /> : <ButtonBroken />}
@@ -110,10 +110,10 @@ function Render({ isFixed, set }: { isFixed: boolean, set: number }) {
             {set === 2 &&
                 <ExampleCard>
                     <h3
-                        className={`font-bold flex items-center text-xl mb-3 sm:mb-4 ${isFixed ? `text-success-default` : `text-danger-default`}`}
+                        className={`font-bold flex gap-2 text-xl mb-3 sm:mb-4 ${isFixed ? `text-success-default` : `text-danger-default`}`}
                     >
                         <span className="material-symbols-outlined">deployed_code</span>
-                        &nbsp;Table rows {isFixed ? `without` : `with`}  fixed heights
+                        Table rows {isFixed ? `without` : `with`}  fixed heights
                     </h3>
                     <div className="text-spacing-sc-values">
                         {isFixed ? <TableFixed /> : <TableBroken />}

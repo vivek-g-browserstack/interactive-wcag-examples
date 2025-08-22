@@ -38,9 +38,9 @@ function Render({ isFixed, isResponsive }: { isFixed: boolean, isResponsive: boo
     return (
         <div>
             {/* <ExampleCard isFixed={isFixed}> */}
-            <h2 className={`font-bold flex items-center text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}>
+            <h2 className={`font-bold flex gap-2 text-xl mb-2 ${isFixed ? `text-success-default` : `text-danger-default`}`}>
                 <span className="material-symbols-outlined">deployed_code</span>
-                &nbsp;{isFixed ? `A hover interaction that is accessible` : `A hover interaction that is not accessible`}
+                {isFixed ? `A hover interaction that is accessible` : `A hover interaction that is not accessible`}
             </h2>
             <div className={`grid ${isResponsive ? 'grid-cols-3 md:grid-cols-3 lg:grid-cols-3' : 'grid-cols-3'} gap-8 md:gap-4`}>
                 <div className="flex flex-col justify-between">
